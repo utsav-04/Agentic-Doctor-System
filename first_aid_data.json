@@ -1,0 +1,1735 @@
+[
+  {
+    "id": "FA-0001",
+    "name": "First Aid for Fever",
+    "category": "first_aid",
+    "condition": "Fever",
+    "severity_level": "mild_to_moderate",
+    "when_to_apply": "Temperature above 38\u00b0C (100.4\u00b0F); body feeling hot; chills and sweating",
+    "immediate_steps": [
+      "Make the person rest in a cool, well-ventilated room",
+      "Remove excess clothing and heavy blankets",
+      "Place a cool (not ice cold) wet cloth on forehead, neck, and armpits",
+      "Give paracetamol (500 mg adult / 10\u201315 mg/kg child) if available",
+      "Encourage drinking plenty of water, coconut water, or ORS",
+      "Sponge the body with lukewarm water (not cold \u2014 causes shivering and raises temperature)",
+      "Monitor temperature every 30 minutes"
+    ],
+    "home_remedies": [
+      "Tulsi (Holy Basil) tea \u2014 boil 10\u201315 tulsi leaves in water; add honey and ginger; sip warm",
+      "Ginger and honey water \u2014 boil grated ginger in water, strain, add honey; effective anti-inflammatory",
+      "Giloy (Tinospora cordifolia) juice or kadha \u2014 traditional immunity booster used in Indian homes",
+      "Haldi doodh (Turmeric milk) \u2014 1/2 teaspoon turmeric in warm milk; anti-inflammatory and soothing",
+      "Methi (Fenugreek) seed water \u2014 soak 1 tsp methi seeds overnight; drink in morning; known fever reducer",
+      "Cold wet sock therapy \u2014 wet socks wrung out and worn to bed to stimulate circulation and cool body"
+    ],
+    "do_not_do": [
+      "Do not give aspirin to children \u2014 risk of Reye's syndrome",
+      "Do not use ice or ice-cold water \u2014 causes rapid shivering and worsens internal temperature",
+      "Do not over-bundle the person in blankets",
+      "Do not force feed if the person is nauseous"
+    ],
+    "go_to_doctor_if": [
+      "Fever above 39.5\u00b0C (103\u00b0F) in adults or 38.5\u00b0C (101.3\u00b0F) in infants under 3 months",
+      "Fever lasting more than 3 days",
+      "Fever with rash, stiff neck, confusion, or difficulty breathing",
+      "Fever in child with febrile seizure",
+      "Fever with no obvious cause in immunocompromised patient"
+    ],
+    "tags": [
+      "fever",
+      "first aid",
+      "home remedy",
+      "paracetamol",
+      "Indian home remedy"
+    ]
+  },
+  {
+    "id": "FA-0002",
+    "name": "First Aid for Common Cold",
+    "category": "first_aid",
+    "condition": "Common Cold",
+    "severity_level": "mild",
+    "when_to_apply": "Runny nose, sneezing, nasal congestion, mild sore throat, no or low-grade fever",
+    "immediate_steps": [
+      "Rest at home \u2014 avoid going out in cold weather",
+      "Stay well hydrated \u2014 warm water, soups, herbal teas",
+      "Use saline nasal drops or spray to relieve blocked nose",
+      "Gargle with warm salt water (1/2 tsp salt in 1 glass warm water) for sore throat",
+      "Steam inhalation with or without menthol/eucalyptus drops for nasal congestion",
+      "Take OTC antihistamine (cetirizine) for runny nose if needed"
+    ],
+    "home_remedies": [
+      "Kadha (Indian herbal decoction) \u2014 boil tulsi leaves, ginger, black pepper, cloves, cinnamon in water; strain and add honey; highly effective for cold and cough",
+      "Haldi doodh (Turmeric milk / Golden Milk) \u2014 warm milk with 1/2 tsp turmeric; fights infection and soothes throat",
+      "Adrak chai (Ginger tea) \u2014 fresh ginger boiled with tea; natural decongestant and antibiotic",
+      "Honey and black pepper \u2014 1 tsp honey + pinch of black pepper; reduces mucus and soothes throat",
+      "Ajwain (Carom seed) steam \u2014 boil ajwain seeds in water; inhale steam; clears nasal passage naturally",
+      "Mustard oil nasal drops \u2014 2 drops warm mustard oil in each nostril; traditional Indian remedy for blocked nose",
+      "Garlic and honey \u2014 crush 1\u20132 garlic cloves with honey; antimicrobial; given to children by Indian mothers"
+    ],
+    "do_not_do": [
+      "Do not take antibiotics \u2014 cold is viral; antibiotics do not help",
+      "Do not use nasal decongestant spray for more than 3\u20135 days",
+      "Do not give cold medicine combinations to children under 6 without doctor advice",
+      "Do not go to work or school \u2014 spreads infection"
+    ],
+    "go_to_doctor_if": [
+      "Cold lasting more than 10 days without improvement",
+      "High fever above 39\u00b0C with cold symptoms",
+      "Green or yellow nasal discharge with facial pain (may be sinusitis)",
+      "Earache or hearing loss developing",
+      "Chest pain or shortness of breath"
+    ],
+    "tags": [
+      "cold",
+      "first aid",
+      "home remedy",
+      "kadha",
+      "Indian home remedy"
+    ]
+  },
+  {
+    "id": "FA-0003",
+    "name": "First Aid for Cough",
+    "category": "first_aid",
+    "condition": "Cough",
+    "severity_level": "mild",
+    "when_to_apply": "Dry or wet cough from cold, throat irritation, dust, or mild infection",
+    "immediate_steps": [
+      "Identify if dry cough (tickling, no mucus) or wet cough (mucus, productive)",
+      "Drink warm water or herbal tea to soothe throat irritation",
+      "For wet cough \u2014 steam inhalation to loosen mucus",
+      "For dry cough \u2014 honey and warm water reduces irritation",
+      "Avoid cold drinks, ice cream, and air conditioning during cough",
+      "Use OTC cough syrup (dextromethorphan for dry; ambroxol/guaifenesin for wet)"
+    ],
+    "home_remedies": [
+      "Honey and ginger juice \u2014 mix equal parts; 1 tsp 3 times daily; one of the most effective natural cough suppressants",
+      "Mulethi (Licorice root) and honey \u2014 crush mulethi root, boil in water, add honey; soothes bronchial lining",
+      "Tulsi, ginger and black pepper decoction \u2014 Indian kitchen staple; boil together, strain, sip hot with honey",
+      "Paan (betel leaf) with ajwain and mishri \u2014 traditional Indian remedy; fold ajwain and mishri in betel leaf, chew slowly; relieves cough",
+      "Vicks VapoRub chest rub \u2014 applied on chest, back, and under nose; menthol relieves cough at night",
+      "Clove and honey \u2014 2 cloves boiled in water or chewed with honey; antibacterial and soothing",
+      "Haldi and warm milk \u2014 classic Indian mom remedy; turmeric's curcumin has anti-inflammatory properties for bronchial cough"
+    ],
+    "do_not_do": [
+      "Do not give honey to infants under 12 months \u2014 botulism risk",
+      "Do not give codeine-based cough syrups to children under 12",
+      "Do not suppress a productive (wet) cough completely \u2014 it clears infection",
+      "Do not continue home remedy beyond 5 days if cough persists"
+    ],
+    "go_to_doctor_if": [
+      "Cough lasting more than 3 weeks",
+      "Coughing up blood",
+      "Cough with high fever and difficulty breathing",
+      "Whooping sound after coughing fits (especially in children)",
+      "Cough in a smoker with weight loss \u2014 rule out lung cancer"
+    ],
+    "tags": [
+      "cough",
+      "first aid",
+      "home remedy",
+      "honey ginger",
+      "Indian home remedy"
+    ]
+  },
+  {
+    "id": "FA-0004",
+    "name": "First Aid for Heart Attack",
+    "category": "first_aid",
+    "condition": "Heart Attack (Myocardial Infarction)",
+    "severity_level": "life_threatening",
+    "when_to_apply": "Crushing chest pain, pain radiating to left arm or jaw, sweating, nausea, breathlessness, feeling of impending doom",
+    "immediate_steps": [
+      "CALL 108 / 112 (emergency ambulance) IMMEDIATELY \u2014 do not drive yourself",
+      "Make the person sit or lie down in a comfortable position (semi-reclined with head and shoulders raised)",
+      "Loosen tight clothing \u2014 collar, tie, belt",
+      "Give 300 mg Aspirin tablet to chew (not swallow whole) if not allergic and no bleeding history",
+      "If person is unconscious and not breathing \u2014 start CPR: 30 chest compressions followed by 2 rescue breaths",
+      "If an AED (defibrillator) is available \u2014 use it immediately with instructions",
+      "Stay with the person and keep them calm; reassure them help is coming",
+      "Do not give food, water, or any other medication"
+    ],
+    "home_remedies": [
+      "No home remedy is appropriate for heart attack \u2014 this is a medical emergency",
+      "Chewing aspirin 300 mg is the only evidence-based pre-hospital intervention",
+      "Keep the person calm and still \u2014 activity increases oxygen demand on damaged heart",
+      "Garlic and arjuna bark (terminalia arjuna) are traditional heart tonics \u2014 NOT for acute attack but used in Indian tradition for heart health maintenance"
+    ],
+    "do_not_do": [
+      "Do not let the person walk or exert themselves",
+      "Do not give water or food \u2014 patient may need emergency surgery",
+      "Do not delay calling ambulance by trying home remedies",
+      "Do not leave the person alone",
+      "Do not give nitroglycerin unless prescribed specifically for that person"
+    ],
+    "go_to_doctor_if": [
+      "Any chest pain lasting more than 5 minutes \u2014 go to emergency immediately",
+      "Chest pain with sweating, nausea, or arm/jaw pain \u2014 emergency",
+      "Palpitations with dizziness or fainting",
+      "Even if pain resolves \u2014 get ECG done same day"
+    ],
+    "tags": [
+      "heart attack",
+      "first aid",
+      "emergency",
+      "CPR",
+      "life-threatening emergency"
+    ]
+  },
+  {
+    "id": "FA-0005",
+    "name": "First Aid for Fracture (Broken Bone)",
+    "category": "first_aid",
+    "condition": "Fracture",
+    "severity_level": "urgent",
+    "when_to_apply": "After fall or accident with severe pain, swelling, deformity, inability to move limb, bone visible through skin",
+    "immediate_steps": [
+      "DO NOT try to straighten or move the broken bone",
+      "Immobilize the injured limb in the position found \u2014 use rolled newspaper, magazine, or wooden plank as a splint",
+      "Tie the splint with cloth above and below the fracture \u2014 not over the fracture site",
+      "Apply ice pack wrapped in cloth to reduce swelling (do not apply ice directly to skin)",
+      "Elevate the injured limb above heart level if possible to reduce swelling",
+      "For open fracture (bone visible) \u2014 cover wound with clean cloth; do not push bone back",
+      "Give paracetamol or ibuprofen for pain if available and person is conscious",
+      "Transport to hospital immediately \u2014 call 108 for spine, neck, or pelvis fractures (do not move)"
+    ],
+    "home_remedies": [
+      "Haldi (Turmeric) paste \u2014 apply on swollen area around fracture for pain and swelling; anti-inflammatory (not on open wounds)",
+      "Castor oil wrap \u2014 warm castor oil cloth wrapped around injured area to reduce swelling; traditional Indian home remedy",
+      "Arandi (Castor) leaf warm compress \u2014 heated leaves applied around swollen joint; used in rural India for sprains and mild fractures",
+      "Chuna (Calcium lime) in paan mixed with milk \u2014 traditional Indian bone healing remedy; provides calcium"
+    ],
+    "do_not_do": [
+      "Do not try to set or push back the broken bone",
+      "Do not apply ice directly on skin \u2014 use cloth wrap",
+      "Do not move a person with suspected spine or neck fracture",
+      "Do not give food or water if surgery may be required",
+      "Do not remove embedded objects from open fracture wounds"
+    ],
+    "go_to_doctor_if": [
+      "Any suspected fracture requires X-ray and medical evaluation",
+      "Numbness or blueness below the fracture site \u2014 nerve or blood vessel injury",
+      "Open fracture (bone visible) \u2014 emergency",
+      "Suspected spine, pelvis, or skull fracture \u2014 call ambulance, do not move",
+      "Child with arm or leg pain after fall \u2014 even if they can move it"
+    ],
+    "tags": [
+      "fracture",
+      "first aid",
+      "emergency",
+      "broken bone",
+      "immobilization"
+    ]
+  },
+  {
+    "id": "FA-0006",
+    "name": "First Aid for Burns",
+    "category": "first_aid",
+    "condition": "Burns",
+    "severity_level": "moderate_to_severe",
+    "when_to_apply": "After contact with flame, hot liquid, steam, hot surface, chemical, or electricity causing skin damage",
+    "immediate_steps": [
+      "Remove the person from the source of burn immediately \u2014 turn off power for electrical burns",
+      "Cool the burn under cool running water for 20 minutes \u2014 this is the most important step",
+      "Remove clothing and jewelry near the burn area (unless stuck to skin)",
+      "Cover with a clean non-fluffy cloth, plastic wrap, or cling film \u2014 do not use cotton wool",
+      "Do not burst blisters \u2014 infection risk",
+      "Give paracetamol or ibuprofen for pain relief",
+      "Elevate burned limb if possible"
+    ],
+    "home_remedies": [
+      "Aloe vera gel \u2014 fresh aloe vera leaf gel applied to mild burns; cools and promotes healing; widely used in Indian homes",
+      "Coconut oil \u2014 applied after 24 hours on minor burns; moisturizes and reduces scarring; traditional South Indian remedy",
+      "Haldi (Turmeric) paste \u2014 antimicrobial; applied on minor burns in Indian households to prevent infection",
+      "Burn-specific ointment (Burnol) \u2014 Indian pharmacy staple; contains turmeric extract; first aid for minor burns"
+    ],
+    "do_not_do": [
+      "Do not apply toothpaste, butter, ghee, oil, or ice on burns \u2014 worsens damage and infection",
+      "Do not use ice or ice-cold water \u2014 causes additional tissue damage",
+      "Do not remove clothing stuck to the burn",
+      "Do not burst blisters with needle or hands",
+      "Do not wrap too tightly \u2014 allows for swelling"
+    ],
+    "go_to_doctor_if": [
+      "Burn larger than palm size (1% of body area)",
+      "Burns on face, hands, feet, genitals, or over joints",
+      "Deep burns with white, brown, or black skin (third degree)",
+      "Chemical or electrical burns \u2014 always",
+      "Burns in children, elderly, or diabetics \u2014 always"
+    ],
+    "tags": [
+      "burns",
+      "first aid",
+      "aloe vera",
+      "home remedy",
+      "burn care"
+    ]
+  },
+  {
+    "id": "FA-0007",
+    "name": "First Aid for Choking",
+    "category": "first_aid",
+    "condition": "Choking",
+    "severity_level": "life_threatening",
+    "when_to_apply": "Person clutching throat, unable to speak or cry, turning blue, high-pitched breathing or silent, unable to cough forcefully",
+    "immediate_steps": [
+      "Ask 'Are you choking?' \u2014 if they can speak or cough, encourage forceful coughing",
+      "If unable to cough or speak \u2014 stand behind the person; give 5 firm back blows between shoulder blades with heel of hand",
+      "If back blows fail \u2014 perform Heimlich maneuver: stand behind, make fist above navel, other hand over fist, give 5 sharp inward-upward thrusts",
+      "Alternate 5 back blows and 5 abdominal thrusts until object dislodged or person loses consciousness",
+      "If unconscious \u2014 lower to floor, call 108, start CPR \u2014 each time you open airway, look for the object",
+      "For infants (under 1 year) \u2014 face-down 5 back blows + face-up 5 chest thrusts (NOT Heimlich)"
+    ],
+    "home_remedies": [
+      "Forceful back slaps between shoulder blades \u2014 used in Indian homes when a child swallows something",
+      "Drinking water (only if partial blockage and person can swallow) \u2014 may help dislodge mild food obstruction",
+      "Turning infant upside down and patting back \u2014 traditional Indian reflex (modified Heimlich principle)"
+    ],
+    "do_not_do": [
+      "Do not do blind finger sweeps in the mouth \u2014 can push object deeper",
+      "Do not give water if person cannot swallow",
+      "Do not perform Heimlich on infants under 1 year \u2014 use back blows and chest thrusts",
+      "Do not delay \u2014 brain damage starts within 4 minutes of oxygen deprivation"
+    ],
+    "go_to_doctor_if": [
+      "Object is dislodged but person is still coughing \u2014 may be residual fragment",
+      "Person loses consciousness \u2014 emergency 108",
+      "Child suspected to have swallowed small object \u2014 X-ray required",
+      "Any breathing difficulty after choking episode"
+    ],
+    "tags": [
+      "choking",
+      "first aid",
+      "Heimlich maneuver",
+      "airway obstruction",
+      "life-threatening emergency"
+    ]
+  },
+  {
+    "id": "FA-0008",
+    "name": "First Aid for Bleeding / Cut Wound",
+    "category": "first_aid",
+    "condition": "Bleeding / Laceration",
+    "severity_level": "mild_to_severe",
+    "when_to_apply": "Cut, laceration, stab wound, or injury with active bleeding",
+    "immediate_steps": [
+      "Wash hands before touching the wound if possible",
+      "Apply firm direct pressure on wound with clean cloth, bandage, or pad \u2014 do not remove cloth even if soaked; add more on top",
+      "Elevate injured limb above heart level to slow bleeding",
+      "If bleeding is severe from a limb \u2014 apply tourniquet 2\u20133 inches above wound (tight enough to stop bleeding); note time of application",
+      "Clean wound gently with clean water after bleeding slows",
+      "Apply antiseptic (povidone-iodine or Dettol diluted) to clean wound",
+      "Cover with sterile bandage or clean cloth"
+    ],
+    "home_remedies": [
+      "Haldi (Turmeric) powder \u2014 sprinkle on minor bleeding cuts; antimicrobial and promotes clotting; classic Indian first aid",
+      "Aloe vera gel \u2014 applied after cleaning for minor cuts; antimicrobial and skin healing",
+      "Honey \u2014 applied to clean wounds; natural antimicrobial; used traditionally in Indian homes before antiseptics",
+      "Neem leaves paste \u2014 crushed fresh neem leaves applied to minor cuts; antibacterial properties",
+      "Coconut oil \u2014 applied on clean minor wounds to prevent infection and promote healing"
+    ],
+    "do_not_do": [
+      "Do not remove large embedded objects \u2014 stabilize and go to hospital",
+      "Do not probe or explore deep wounds at home",
+      "Do not apply tourniquet to neck, chest, or abdomen",
+      "Do not use cotton wool directly on wounds \u2014 fibers stick to the wound",
+      "Do not remove blood-soaked bandage \u2014 add more on top to maintain clotting"
+    ],
+    "go_to_doctor_if": [
+      "Bleeding does not stop after 10\u201315 minutes of firm pressure",
+      "Deep gaping wound that may need stitches",
+      "Wound from animal bite or rusty object \u2014 tetanus risk",
+      "Wound with numbness below it \u2014 possible nerve damage",
+      "Wound in face, hand, or genitals \u2014 specialist care"
+    ],
+    "tags": [
+      "bleeding",
+      "first aid",
+      "wound",
+      "cut",
+      "laceration"
+    ]
+  },
+  {
+    "id": "FA-0009",
+    "name": "First Aid for Snake Bite",
+    "category": "first_aid",
+    "condition": "Snake Bite",
+    "severity_level": "life_threatening",
+    "when_to_apply": "After snake bite with fang marks, pain, swelling, bleeding from bite, vision changes, muscle weakness, difficulty breathing",
+    "immediate_steps": [
+      "Keep the person calm and completely still \u2014 movement accelerates venom spread through lymphatics",
+      "Immobilize the bitten limb at or below heart level \u2014 use improvised splint if needed",
+      "Remove watches, rings, bracelets near bite \u2014 swelling will make removal impossible",
+      "Mark the edge of swelling with pen and time \u2014 helps doctors track venom spread",
+      "Transport to hospital IMMEDIATELY with person lying still \u2014 carry do not walk",
+      "Note appearance of snake if possible (color, markings) \u2014 helps identify venom type",
+      "If possible \u2014 take photo of snake; do NOT try to capture or kill it"
+    ],
+    "home_remedies": [
+      "No effective home remedy exists for venomous snake bite \u2014 antivenom is the ONLY treatment",
+      "Traditional Indian remedies (black stone, suction, herbs) have NO scientific evidence and delay life-saving antivenom",
+      "Keeping the person calm and immobile is the most important pre-hospital action"
+    ],
+    "do_not_do": [
+      "Do NOT cut and suck the wound \u2014 causes infection and venom spread into rescuer",
+      "Do NOT apply tourniquet \u2014 causes more tissue damage than the venom",
+      "Do NOT apply ice, electricity, potassium permanganate, or any substance to bite",
+      "Do NOT give alcohol \u2014 speeds venom absorption",
+      "Do NOT apply black stone or traditional snake stone remedies",
+      "Do NOT try to catch or kill the snake \u2014 more bites occur this way"
+    ],
+    "go_to_doctor_if": [
+      "All snake bites require hospital evaluation \u2014 even if non-venomous",
+      "Any swelling, bruising, or pain \u2014 go immediately",
+      "Drooping eyelids, difficulty swallowing, or breathing \u2014 rush to emergency",
+      "Abnormal bleeding from bite or gums \u2014 coagulopathy from venom"
+    ],
+    "tags": [
+      "snake bite",
+      "first aid",
+      "emergency",
+      "antivenom",
+      "life-threatening"
+    ]
+  },
+  {
+    "id": "FA-0010",
+    "name": "First Aid for Seizure / Epileptic Fit",
+    "category": "first_aid",
+    "condition": "Seizure / Epileptic Fit",
+    "severity_level": "urgent",
+    "when_to_apply": "Person suddenly falling, body shaking or convulsing, eyes rolling back, loss of consciousness, jaw clenching",
+    "immediate_steps": [
+      "Stay calm \u2014 most seizures stop on their own within 1\u20133 minutes",
+      "Clear the area of sharp or hard objects \u2014 prevent injury during convulsion",
+      "Place something soft (folded cloth, jacket) under the person's head",
+      "Turn the person on their side (recovery position) to prevent choking on saliva or vomit",
+      "Loosen tight clothing around neck and chest",
+      "Time the seizure \u2014 if it lasts more than 5 minutes, call 108 (status epilepticus)",
+      "After seizure \u2014 let person rest; they will be confused (postictal state); reassure them gently"
+    ],
+    "home_remedies": [
+      "Calm environment \u2014 reduce noise, light stimulation; seizure-prone individuals are sensitive",
+      "Brahmi (Bacopa monnieri) \u2014 traditional Indian nerve tonic used in Ayurveda for epilepsy management (NOT during acute seizure)",
+      "Shankhpushpi \u2014 traditional Indian herb for neurological calming (maintenance use only; not acute treatment)"
+    ],
+    "do_not_do": [
+      "Do NOT hold the person down \u2014 you cannot stop the seizure and may cause injury",
+      "Do NOT put anything in the mouth \u2014 person cannot swallow their tongue (a myth); you will get bitten",
+      "Do NOT give water during the seizure",
+      "Do NOT leave the person alone during or immediately after seizure",
+      "Do NOT restrain the shaking limbs \u2014 let seizure run its course"
+    ],
+    "go_to_doctor_if": [
+      "First-ever seizure in anyone \u2014 always",
+      "Seizure lasting more than 5 minutes \u2014 emergency (status epilepticus)",
+      "Two or more seizures without recovery in between",
+      "Person does not regain consciousness after seizure",
+      "Seizure in a pregnant woman, diabetic, or after head injury"
+    ],
+    "tags": [
+      "seizure",
+      "first aid",
+      "epilepsy",
+      "fit",
+      "convulsion"
+    ]
+  },
+  {
+    "id": "FA-0011",
+    "name": "First Aid for Drowning",
+    "category": "first_aid",
+    "condition": "Drowning",
+    "severity_level": "life_threatening",
+    "when_to_apply": "Person pulled from water; unconscious or semi-conscious; not breathing; blue lips; water from mouth",
+    "immediate_steps": [
+      "Remove person from water safely \u2014 do not jump in unless trained to swim and rescue",
+      "Call 108 immediately",
+      "Check for responsiveness and breathing",
+      "If not breathing \u2014 start CPR immediately: 30 chest compressions followed by 2 rescue breaths",
+      "For drowning victims \u2014 start with 5 rescue breaths before chest compressions (airway clearance priority)",
+      "Continue CPR until ambulance arrives or person breathes",
+      "Keep person warm \u2014 remove wet clothing and cover with blanket (hypothermia risk)",
+      "Place in recovery position once breathing returns (unconscious but breathing)"
+    ],
+    "home_remedies": [
+      "No home remedy \u2014 this is a medical emergency requiring CPR and hospitalization",
+      "Warming with blankets to prevent hypothermia \u2014 a practical first step after CPR",
+      "Jaggery and warm water (Indian home) \u2014 only after full recovery of consciousness; provides energy"
+    ],
+    "do_not_do": [
+      "Do not hang person upside down to drain water \u2014 wastes time and delays CPR",
+      "Do not try to remove water from lungs \u2014 the priority is CPR and breathing",
+      "Do not leave person alone even after apparent recovery \u2014 secondary drowning can occur 1\u201324 hours later",
+      "Do not skip hospital visit after near-drowning \u2014 internal water in lungs causes delayed deterioration"
+    ],
+    "go_to_doctor_if": [
+      "All drowning or near-drowning cases \u2014 hospital admission mandatory",
+      "Person was unconscious even briefly \u2014 possible secondary drowning",
+      "Coughing, breathing difficulty, or confusion after water rescue"
+    ],
+    "tags": [
+      "drowning",
+      "first aid",
+      "CPR",
+      "water rescue",
+      "life-threatening emergency"
+    ]
+  },
+  {
+    "id": "FA-0012",
+    "name": "First Aid for Heat Stroke",
+    "category": "first_aid",
+    "condition": "Heat Stroke",
+    "severity_level": "life_threatening",
+    "when_to_apply": "Body temperature above 40\u00b0C (104\u00b0F), hot dry skin (no sweating), confusion, slurred speech, unconsciousness after heat exposure",
+    "immediate_steps": [
+      "Move person to cool shaded area or air-conditioned room immediately",
+      "Call 108 \u2014 heat stroke is a medical emergency",
+      "Remove excess clothing",
+      "Apply cold water or ice packs to neck, armpits, and groin (major blood vessels)",
+      "Fan the person aggressively while spraying cool water on skin",
+      "Do not give fluids by mouth if unconscious or confused",
+      "If conscious and alert \u2014 give cold water or ORS to drink slowly",
+      "Place in recovery position if unconscious"
+    ],
+    "home_remedies": [
+      "Aam panna (Raw mango cooler) \u2014 traditional Indian summer drink; prevents heat stroke; mix raw mango pulp with cumin, salt, sugar, and water",
+      "Kokum sherbet \u2014 South Indian and coastal Indian summer cooler; naturally cooling",
+      "Sattu (Roasted gram flour) drink \u2014 Bihar/UP traditional summer drink; cooling and nutritious",
+      "Buttermilk (Chaas) with jeera and sendha namak \u2014 cooling probiotic drink; widely used across India in summer",
+      "Onion \u2014 cut raw onion applied to back of neck and soles of feet; traditional Indian heat remedy"
+    ],
+    "do_not_do": [
+      "Do not give aspirin or paracetamol \u2014 does not work for heat stroke fever (it is not infection-related fever)",
+      "Do not apply ice directly to skin \u2014 causes vasoconstriction and worsens core cooling",
+      "Do not give alcohol \u2014 worsens dehydration",
+      "Do not leave person in the sun or hot vehicle"
+    ],
+    "go_to_doctor_if": [
+      "Any suspected heat stroke \u2014 always emergency",
+      "Temperature above 40\u00b0C (104\u00b0F)",
+      "Person is confused, seizuring, or unconscious",
+      "Temperature does not come down despite cooling efforts"
+    ],
+    "tags": [
+      "heat stroke",
+      "first aid",
+      "emergency",
+      "hyperthermia",
+      "summer emergency India"
+    ]
+  },
+  {
+    "id": "FA-0013",
+    "name": "First Aid for Allergic Reaction (Anaphylaxis)",
+    "category": "first_aid",
+    "condition": "Anaphylaxis / Severe Allergic Reaction",
+    "severity_level": "life_threatening",
+    "when_to_apply": "After food, drug, or insect sting; hives, throat swelling, difficulty breathing, low blood pressure, loss of consciousness",
+    "immediate_steps": [
+      "Call 108 immediately \u2014 anaphylaxis can kill within minutes",
+      "If EpiPen (epinephrine auto-injector) is available \u2014 inject into outer thigh immediately",
+      "Lay person flat with legs elevated (shock position) \u2014 unless breathing is difficult, then sit up",
+      "If unconscious and not breathing \u2014 start CPR",
+      "If prescribed, give antihistamine (cetirizine/chlorpheniramine) and oral steroid \u2014 NOT substitutes for epinephrine, only adjuncts",
+      "Identify and remove the allergen if possible (remove bee stinger with credit card scrape \u2014 not pinch)"
+    ],
+    "home_remedies": [
+      "NO home remedy for anaphylaxis \u2014 this is a medical emergency",
+      "For mild allergic reactions (hives, sneezing, itching) only: cetirizine 10 mg is appropriate",
+      "Cold compress on hives \u2014 temporary itch relief while going to doctor"
+    ],
+    "do_not_do": [
+      "Do not give antihistamine alone for anaphylaxis \u2014 it is too slow and too weak",
+      "Do not leave the person sitting upright if they have low blood pressure",
+      "Do not give anything by mouth if throat is swelling",
+      "Do not delay \u2014 epinephrine must be given within minutes for effect"
+    ],
+    "go_to_doctor_if": [
+      "All anaphylaxis cases \u2014 even after epinephrine injection (biphasic reaction possible 4\u20138 hours later)",
+      "Any throat tightness, difficulty breathing, or swallowing after allergen exposure",
+      "New widespread hives with swelling"
+    ],
+    "tags": [
+      "anaphylaxis",
+      "first aid",
+      "allergic reaction",
+      "epinephrine",
+      "life-threatening"
+    ]
+  },
+  {
+    "id": "FA-0014",
+    "name": "First Aid for Eye Injury / Chemical Splash",
+    "category": "first_aid",
+    "condition": "Eye Injury / Chemical Splash",
+    "severity_level": "urgent",
+    "when_to_apply": "Foreign body in eye, chemical splash, smoke exposure, eye trauma, sudden pain or vision loss",
+    "immediate_steps": [
+      "For chemical splash \u2014 flush eye with large amounts of clean water for 15\u201320 minutes continuously; hold eyelid open",
+      "For foreign body \u2014 do not rub; blink several times; flush with clean water; pull upper lid over lower to dislodge",
+      "For blunt trauma \u2014 apply ice pack wrapped in cloth (do not press on eye directly)",
+      "Cover injured eye with clean cloth or eye pad \u2014 do not use cotton wool",
+      "Seek emergency care for chemical burns, embedded object, or penetrating injury",
+      "Remove contact lenses immediately if worn"
+    ],
+    "home_remedies": [
+      "Rose water (Gulab jal) \u2014 a drop or two in the eye relieves mild irritation; used in Indian homes for red or irritated eyes",
+      "Triphala water eye wash \u2014 traditional Ayurvedic eyewash for mild eye fatigue and irritation (boil triphala, strain thoroughly, cool, use as wash)",
+      "Cold milk compress \u2014 cotton soaked in cold milk placed on closed eyes; reduces puffiness and mild irritation"
+    ],
+    "do_not_do": [
+      "Do not rub the eye with hands \u2014 may scratch cornea or push foreign body deeper",
+      "Do not remove embedded object from eye \u2014 cover and go to hospital",
+      "Do not apply eye drops (except plain saline/water rinse) without diagnosis",
+      "Do not patch both eyes \u2014 person needs one eye to navigate"
+    ],
+    "go_to_doctor_if": [
+      "Chemical splash \u2014 always go to eye emergency after flushing",
+      "Foreign body not dislodged after flushing",
+      "Sudden vision loss or blurring",
+      "Penetrating eye injury \u2014 emergency",
+      "Eye pain not resolving after flushing"
+    ],
+    "tags": [
+      "eye injury",
+      "first aid",
+      "chemical splash",
+      "foreign body eye",
+      "eye emergency"
+    ]
+  },
+  {
+    "id": "FA-0015",
+    "name": "First Aid for Loose Motion (Diarrhea)",
+    "category": "first_aid",
+    "condition": "Loose Motion / Diarrhea",
+    "severity_level": "mild_to_moderate",
+    "when_to_apply": "Frequent watery stools, stomach cramps, nausea, weakness from fluid loss",
+    "immediate_steps": [
+      "Start ORS (Oral Rehydration Solution) immediately \u2014 1 sachet in 200 mL water; sip frequently",
+      "Continue eating light foods \u2014 khichdi, curd rice, banana, toast (BRAT diet)",
+      "Avoid milk, heavy oily foods, raw vegetables during diarrhea",
+      "Give zinc 20 mg/day in children under 5 years alongside ORS",
+      "Monitor urine output \u2014 reduced urine = dehydration warning"
+    ],
+    "home_remedies": [
+      "Rice kanji (rice water) \u2014 water from boiled rice with salt; traditional Indian first remedy for loose motion; provides electrolytes and is easy on gut",
+      "Dahi (Curd/Yogurt) with rice \u2014 probiotics from curd help restore gut flora; staple Indian remedy for diarrhea",
+      "Jeera (Cumin) water \u2014 boil 1 tsp cumin seeds in water, strain and drink; reduces gut spasms and diarrhea",
+      "Saunf (Fennel) tea \u2014 boil fennel seeds, strain, drink warm; soothes intestinal cramping",
+      "Pomegranate juice \u2014 1 glass fresh pomegranate juice; natural astringent; used by Indian mothers for loose motion",
+      "Banana \u2014 easy to digest; provides potassium lost through diarrhea; binding effect on stools",
+      "Coconut water \u2014 natural electrolyte drink; replaces lost minerals without adding sugar load"
+    ],
+    "do_not_do": [
+      "Do not give loperamide (Imodium) to children under 2 or if blood in stool",
+      "Do not stop fluids \u2014 most important treatment is hydration",
+      "Do not give antibiotics without knowing the cause",
+      "Do not give sports drinks (too much sugar, wrong electrolyte balance)"
+    ],
+    "go_to_doctor_if": [
+      "Blood or mucus in stool",
+      "Fever above 38.5\u00b0C with diarrhea",
+      "Diarrhea more than 6 times in 24 hours",
+      "Signs of dehydration \u2014 sunken eyes, no urine for 6+ hours, very dry mouth",
+      "Infant or elderly person with any diarrhea \u2014 higher dehydration risk"
+    ],
+    "tags": [
+      "loose motion",
+      "first aid",
+      "home remedy",
+      "ORS",
+      "Indian home remedy diarrhea"
+    ]
+  },
+  {
+    "id": "FA-0016",
+    "name": "First Aid for Vomiting",
+    "category": "first_aid",
+    "condition": "Vomiting",
+    "severity_level": "mild_to_moderate",
+    "when_to_apply": "Single or repeated vomiting episodes; nausea; unable to keep fluids down",
+    "immediate_steps": [
+      "Let the person vomit \u2014 do not try to suppress it forcefully",
+      "Sit upright or lean forward during vomiting \u2014 prevent aspiration",
+      "After vomiting \u2014 rinse mouth with water; do not eat or drink for 20\u201330 minutes",
+      "Start small sips of water or ORS every 5 minutes \u2014 do not give large amounts at once",
+      "Gradually progress to clear fluids \u2014 coconut water, diluted juice, thin dal",
+      "Ondansetron ODT tablet (4 mg) \u2014 dissolves on tongue; very effective for moderate vomiting"
+    ],
+    "home_remedies": [
+      "Adrak (Ginger) tea or ginger chews \u2014 most evidence-based natural antiemetic; sip slowly",
+      "Jeera (Cumin) and ajwain (Carom) boiled water \u2014 traditional Indian remedy; relieves nausea and gut spasm",
+      "Nimbu pani (Lemon water) with sendha namak \u2014 soothing, replenishes electrolytes; widely used across India",
+      "Pudina (Mint) tea \u2014 fresh mint leaves boiled in water; natural antiemetic and digestive",
+      "Saunf (Fennel) seeds chewed raw \u2014 traditional Indian after-meal digestive that also reduces nausea",
+      "Cold compress on forehead and back of neck \u2014 reduces nausea and provides comfort"
+    ],
+    "do_not_do": [
+      "Do not give large amounts of fluid immediately \u2014 worsens vomiting",
+      "Do not give solid food until vomiting stops for 2 hours",
+      "Do not give promethazine to children under 2 years",
+      "Do not lie flat after vomiting \u2014 aspiration risk"
+    ],
+    "go_to_doctor_if": [
+      "Vomiting blood or coffee-ground material",
+      "Vomiting with severe headache or stiff neck \u2014 meningitis",
+      "Vomiting for more than 24 hours in adults or 12 hours in children",
+      "Unable to keep even small sips of water down",
+      "Vomiting after head injury"
+    ],
+    "tags": [
+      "vomiting",
+      "first aid",
+      "home remedy",
+      "nausea",
+      "Indian home remedy vomiting"
+    ]
+  },
+  {
+    "id": "FA-0017",
+    "name": "First Aid for Nose Bleed (Epistaxis)",
+    "category": "first_aid",
+    "condition": "Nose Bleed (Epistaxis)",
+    "severity_level": "mild_to_moderate",
+    "when_to_apply": "Spontaneous or trauma-related bleeding from nose",
+    "immediate_steps": [
+      "Sit upright and lean slightly forward \u2014 prevents blood from going down the throat",
+      "Pinch the soft part of nose (below the bony bridge) firmly for 10\u201315 minutes without releasing",
+      "Breathe through mouth",
+      "Apply cold compress or ice pack wrapped in cloth to bridge of nose and back of neck",
+      "After bleeding stops \u2014 do not blow nose for several hours",
+      "Avoid hot food, drinks, or exertion for the next few hours"
+    ],
+    "home_remedies": [
+      "Cold water splash on back of neck \u2014 reflex vasoconstriction; traditional Indian first response",
+      "Tulsi (Basil) leaves \u2014 squeeze 2\u20133 drops of juice into nostril; traditional hemostatic remedy in Indian homes",
+      "Ice pack or cold wet cloth on nose bridge \u2014 vasoconstriction reduces bleeding",
+      "Nasal saline spray \u2014 keeps mucosa moist; prevents recurrent nosebleeds especially in dry weather"
+    ],
+    "do_not_do": [
+      "Do NOT tilt head backward \u2014 blood flows into throat causing nausea, vomiting, or choking",
+      "Do not pack nose tightly with cotton wool \u2014 sticks to clot and restarts bleeding on removal",
+      "Do not release pinch before 10 minutes \u2014 breaks clot formation",
+      "Do not blow nose for several hours after bleeding stops"
+    ],
+    "go_to_doctor_if": [
+      "Bleeding does not stop after 20\u201330 minutes of firm pressure",
+      "Recurring nosebleeds \u2014 may need cauterization",
+      "Nosebleed after head trauma",
+      "Nosebleed in person on blood thinners (warfarin, aspirin)",
+      "Large blood loss with dizziness or fainting"
+    ],
+    "tags": [
+      "nosebleed",
+      "epistaxis",
+      "first aid",
+      "home remedy",
+      "nasal bleeding"
+    ]
+  },
+  {
+    "id": "FA-0018",
+    "name": "First Aid for Tooth Pain / Dental Emergency",
+    "category": "first_aid",
+    "condition": "Toothache / Dental Emergency",
+    "severity_level": "mild_to_moderate",
+    "when_to_apply": "Sudden severe toothache, knocked-out tooth, broken tooth, dental abscess swelling",
+    "immediate_steps": [
+      "Rinse mouth with warm salt water \u2014 reduces inflammation and kills bacteria",
+      "For knocked-out permanent tooth \u2014 hold by crown (not root); rinse gently in milk; try to reinsert into socket; if not possible \u2014 store in milk or saliva; go to dentist within 60 minutes",
+      "For severe pain \u2014 take ibuprofen 400 mg or paracetamol 500 mg",
+      "Apply clove oil (Eugenol) to painful tooth area with cotton ball \u2014 natural dental anesthetic",
+      "For dental abscess (swelling) \u2014 warm salt water rinse every 2 hours; do not lance at home"
+    ],
+    "home_remedies": [
+      "Laung (Clove) oil \u2014 most evidence-based natural dental pain remedy; eugenol in cloves is a natural analgesic and antiseptic; apply directly to tooth",
+      "Whole clove \u2014 place clove against aching tooth and bite gently; releases eugenol oil",
+      "Warm salt water gargle \u2014 antibacterial and anti-inflammatory; reduces swelling around infected tooth",
+      "Garlic paste \u2014 crushed garlic on aching tooth; allicin in garlic has antibacterial properties",
+      "Hing (Asafoetida) and lemon juice \u2014 1 pinch hing in lemon juice; applied to tooth; traditional Indian toothache remedy",
+      "Onion \u2014 raw onion piece chewed or held against aching tooth; antimicrobial"
+    ],
+    "do_not_do": [
+      "Do not put aspirin directly on the tooth or gum \u2014 causes chemical burn to gum tissue",
+      "Do not ignore dental abscess \u2014 can spread to throat and become life-threatening",
+      "Do not reimplant a knocked-out baby (milk) tooth \u2014 can damage permanent tooth underneath",
+      "Do not use very hot or cold food on sensitive tooth \u2014 worsens pain"
+    ],
+    "go_to_doctor_if": [
+      "Swelling of face or jaw \u2014 possible abscess spreading",
+      "Fever with toothache \u2014 sign of infection",
+      "Knocked-out permanent tooth \u2014 see dentist within 60 minutes for best chance of saving the tooth",
+      "Broken tooth with sharp edge cutting tongue or cheek",
+      "Pain not relieved by OTC painkillers"
+    ],
+    "tags": [
+      "toothache",
+      "dental emergency",
+      "first aid",
+      "clove oil",
+      "Indian home remedy tooth pain"
+    ]
+  },
+  {
+    "id": "FA-0019",
+    "name": "First Aid for Sprain and Muscle Strain",
+    "category": "first_aid",
+    "condition": "Sprain / Muscle Strain",
+    "severity_level": "mild_to_moderate",
+    "when_to_apply": "After twisting ankle, wrist, or knee; sudden sharp pain; swelling; inability to bear weight; muscle pulled during exercise",
+    "immediate_steps": [
+      "RICE protocol \u2014 Rest, Ice, Compression, Elevation",
+      "REST \u2014 stop activity immediately; do not walk on injured ankle",
+      "ICE \u2014 apply ice pack (wrapped in cloth) for 15\u201320 minutes every 2 hours for first 48 hours",
+      "COMPRESSION \u2014 wrap with crepe bandage (not too tight \u2014 check fingers/toes remain pink)",
+      "ELEVATION \u2014 raise injured limb above heart level to reduce swelling",
+      "Take ibuprofen 400 mg or diclofenac 50 mg for pain and swelling"
+    ],
+    "home_remedies": [
+      "Haldi (Turmeric) and mustard oil paste \u2014 warm paste applied to sprained area; reduces swelling; classic Indian home remedy",
+      "Castor oil warm compress \u2014 warm castor oil applied with cloth wrapped around sprain; anti-inflammatory",
+      "Arnica gel (available in Indian pharmacies) \u2014 topical anti-bruising and anti-swelling remedy; homeopathic but widely used",
+      "Vinegar warm compress \u2014 diluted vinegar-soaked cloth on sprain; reduces inflammation",
+      "Mahanarayan oil massage \u2014 Ayurvedic oil massage around (not on) injured area after 48 hours; promotes healing"
+    ],
+    "do_not_do": [
+      "Do not apply heat in first 48 hours \u2014 increases swelling; switch to heat after 48\u201372 hours",
+      "Do not walk or bear weight on severely sprained ankle \u2014 may be fractured",
+      "Do not massage directly on acutely sprained joint",
+      "Do not wrap compression bandage too tightly \u2014 impairs circulation"
+    ],
+    "go_to_doctor_if": [
+      "Inability to bear any weight after 24 hours \u2014 possible fracture",
+      "Severe swelling with bruising immediately",
+      "Joint deformity or feeling of something tearing at time of injury",
+      "Numbness or tingling below injury \u2014 nerve involvement",
+      "No improvement after 5\u20137 days of RICE"
+    ],
+    "tags": [
+      "sprain",
+      "muscle strain",
+      "first aid",
+      "RICE protocol",
+      "Indian home remedy sprain"
+    ]
+  },
+  {
+    "id": "FA-0020",
+    "name": "First Aid for Fainting (Syncope)",
+    "category": "first_aid",
+    "condition": "Fainting / Syncope",
+    "severity_level": "mild_to_moderate",
+    "when_to_apply": "Person suddenly loses consciousness briefly; pale, sweaty before fainting; collapse after prolonged standing, heat, or emotional shock",
+    "immediate_steps": [
+      "Lay person flat on their back immediately \u2014 do not keep them upright in a chair",
+      "Elevate legs above heart level (30\u201345 degrees) to restore blood flow to brain",
+      "Loosen tight clothing \u2014 collar, tie, bra strap",
+      "Ensure fresh air \u2014 open windows, fan, move to cool area",
+      "Check breathing and pulse \u2014 if absent, start CPR",
+      "Person should regain consciousness within 1\u20132 minutes",
+      "Once awake \u2014 help them sit up slowly; give water slowly"
+    ],
+    "home_remedies": [
+      "Smelling salts (Kapoor \u2014 camphor) \u2014 held under nose; traditional Indian remedy to revive fainting person; ammonia causes reflex breathing",
+      "Nimbu pani (Lemon water with salt and sugar) \u2014 given after recovery of consciousness; restores electrolytes",
+      "Hing (Asafoetida) \u2014 strong smell held near nose; traditional Indian smelling salt equivalent",
+      "Cold water splash on face \u2014 gentle stimulus to revive mildly fainted person"
+    ],
+    "do_not_do": [
+      "Do not try to prop person upright during fainting \u2014 worsens brain blood flow",
+      "Do not give anything by mouth while unconscious \u2014 choking risk",
+      "Do not slap or shake the person aggressively",
+      "Do not leave person alone after first faint \u2014 another episode may follow"
+    ],
+    "go_to_doctor_if": [
+      "First fainting episode in anyone over 40",
+      "Fainting with chest pain, palpitations, or shortness of breath",
+      "Fainting after exercise",
+      "Takes more than 2\u20133 minutes to recover consciousness",
+      "Fainting in a diabetic patient \u2014 may be hypoglycemia",
+      "Fainting with tongue bite or limb jerking \u2014 possible seizure"
+    ],
+    "tags": [
+      "fainting",
+      "syncope",
+      "first aid",
+      "home remedy",
+      "loss of consciousness"
+    ]
+  },
+  {
+    "id": "FA-0021",
+    "name": "First Aid for Insect Sting / Bee Sting",
+    "category": "first_aid",
+    "condition": "Insect Sting / Bee Sting",
+    "severity_level": "mild_to_moderate",
+    "when_to_apply": "Pain, redness, swelling at sting site after bee, wasp, or hornet sting",
+    "immediate_steps": [
+      "Remove bee stinger by scraping sideways with credit card or fingernail \u2014 do not pinch with tweezers (squeezes more venom)",
+      "Wash the sting site with soap and water",
+      "Apply ice pack wrapped in cloth for 10\u201315 minutes to reduce swelling",
+      "Take antihistamine (cetirizine 10 mg or chlorpheniramine 4 mg) for itching and swelling",
+      "Take ibuprofen or paracetamol for pain",
+      "Watch for signs of anaphylaxis for 30 minutes \u2014 throat tightness, breathing difficulty, hives all over body"
+    ],
+    "home_remedies": [
+      "Baking soda paste \u2014 1 tsp baking soda + water applied to sting; neutralizes bee venom (acidic); reduces pain",
+      "Onion slice \u2014 raw onion applied directly to sting; natural antihistamine enzymes; Indian home remedy",
+      "Haldi (Turmeric) paste with coconut oil \u2014 applied on sting; reduces swelling and pain",
+      "Neem oil \u2014 applied to sting area; antibacterial and anti-inflammatory",
+      "Mud or clay pack \u2014 traditional rural Indian remedy; cooling and draws out venom (clean mud only)"
+    ],
+    "do_not_do": [
+      "Do not squeeze or pinch stinger out \u2014 pushes more venom",
+      "Do not scratch the sting \u2014 worsens local reaction",
+      "Do not ignore throat tightness or breathing difficulty \u2014 call 108",
+      "Do not apply vinegar to bee sting (vinegar is for jellyfish \u2014 wrong for bees)"
+    ],
+    "go_to_doctor_if": [
+      "Any throat swelling, difficulty breathing, or widespread hives \u2014 emergency anaphylaxis",
+      "Multiple bee stings (more than 10) \u2014 toxic venom load",
+      "Stung in throat or mouth",
+      "Child with large local reaction",
+      "Known bee allergy \u2014 always go to hospital regardless of symptoms"
+    ],
+    "tags": [
+      "bee sting",
+      "insect sting",
+      "first aid",
+      "home remedy",
+      "allergic reaction"
+    ]
+  },
+  {
+    "id": "FA-0022",
+    "name": "First Aid for Acid Reflux / Acidity Attack",
+    "category": "first_aid",
+    "condition": "Acidity / Heartburn Attack",
+    "severity_level": "mild",
+    "when_to_apply": "Burning sensation in chest after meals; acid taste in mouth; belching; bloating; sour throat",
+    "immediate_steps": [
+      "Sit upright or stand \u2014 lying down worsens acid reflux",
+      "Take antacid (Digene, Gelusil, or Eno) immediately for relief",
+      "Drink cold milk or coconut water \u2014 neutralizes stomach acid temporarily",
+      "Avoid eating or drinking anything acidic (coffee, tea, citrus) for several hours",
+      "If severe \u2014 take omeprazole 20 mg or pantoprazole 40 mg if available"
+    ],
+    "home_remedies": [
+      "Saunf (Fennel) seeds \u2014 chew 1 tsp after meals; reduces acid secretion; most common Indian post-meal digestive",
+      "Jeera (Cumin) water \u2014 boil 1 tsp cumin in water; drink warm; reduces acidity and bloating",
+      "Aam panna \u2014 raw mango drink with mint; cooling and stomach soothing",
+      "Ajwain (Carom seeds) water \u2014 boil ajwain in water; drink warm; highly effective for gas and acidity",
+      "Baking soda water \u2014 1/2 tsp in 200 mL water; instant alkalizing effect; use occasionally only",
+      "Cold milk \u2014 glass of plain cold milk; alkaline and neutralizes acid quickly; the classic Indian acidity remedy",
+      "Nimbu pani without sugar (with just salt) \u2014 though acidic, triggers bicarbonate secretion; paradoxically helps mild acidity"
+    ],
+    "do_not_do": [
+      "Do not lie down immediately after eating",
+      "Do not take antacids with other medicines \u2014 absorb them",
+      "Do not use baking soda daily \u2014 excess sodium and CO2 buildup",
+      "Do not ignore chest pain from acidity without ruling out heart attack \u2014 especially in men over 40"
+    ],
+    "go_to_doctor_if": [
+      "Chest pain with sweating or arm pain \u2014 rule out heart attack",
+      "Acid reflux more than twice a week \u2014 GERD requiring PPI therapy",
+      "Difficulty swallowing with acidity",
+      "Weight loss with acidity \u2014 red flag for esophageal disease",
+      "Blood in vomit or black stools"
+    ],
+    "tags": [
+      "acidity",
+      "heartburn",
+      "first aid",
+      "home remedy",
+      "Indian home remedy acidity"
+    ]
+  },
+  {
+    "id": "FA-0023",
+    "name": "First Aid for Headache",
+    "category": "first_aid",
+    "condition": "Headache",
+    "severity_level": "mild",
+    "when_to_apply": "Dull, throbbing, or pressure headache; tension headache; mild migraine",
+    "immediate_steps": [
+      "Rest in a quiet, dark, cool room",
+      "Drink a glass of water \u2014 dehydration is the most common cause of headache",
+      "Take paracetamol 500\u20131000 mg or ibuprofen 400 mg",
+      "Apply cold compress on forehead for migraine or hot compress on back of neck for tension headache",
+      "Massage temples, neck, and base of skull gently"
+    ],
+    "home_remedies": [
+      "Amrutanjan / Tiger Balm \u2014 classic Indian topical balm; apply to temples and forehead; menthol provides cooling relief",
+      "Iodex / Moov balm \u2014 applied to forehead and back of neck; commonly used in Indian homes for tension headache",
+      "Ginger tea \u2014 boil ginger in water with honey; anti-inflammatory; effective for migraines per studies",
+      "Peppermint oil \u2014 diluted and applied to temples; relieves tension headache as effectively as paracetamol per research",
+      "Tulsi and ginger decoction \u2014 boil both in water, strain, add honey; traditional Indian headache remedy",
+      "Besan (Gram flour) paste with water on forehead \u2014 cooling; used in rural India for fever headache",
+      "Clove and salt compress \u2014 warm cloth with clove oil; applied to temples; traditional remedy"
+    ],
+    "do_not_do": [
+      "Do not take more than recommended dose of paracetamol or ibuprofen",
+      "Do not ignore sudden worst headache of life \u2014 thunderclap headache is a medical emergency (subarachnoid hemorrhage)",
+      "Do not overuse painkillers \u2014 causes medication overuse headache",
+      "Do not stare at bright screens during migraine \u2014 worsens photophobia"
+    ],
+    "go_to_doctor_if": [
+      "Sudden severe worst headache you've ever had \u2014 emergency",
+      "Headache with fever and stiff neck \u2014 possible meningitis",
+      "Headache with vision changes, confusion, or weakness",
+      "Headache after head injury",
+      "Headache waking you from sleep or worse in morning"
+    ],
+    "tags": [
+      "headache",
+      "first aid",
+      "home remedy",
+      "Indian balm",
+      "tension headache"
+    ]
+  },
+  {
+    "id": "FA-0024",
+    "name": "First Aid for Electric Shock",
+    "category": "first_aid",
+    "condition": "Electric Shock",
+    "severity_level": "life_threatening",
+    "when_to_apply": "Person in contact with electrical source; burns at contact points; loss of consciousness; muscle spasm from shock",
+    "immediate_steps": [
+      "DO NOT touch the person until power is switched off",
+      "Turn off the main power switch or disconnect the source immediately",
+      "If cannot turn off power \u2014 use non-conducting object (dry wooden stick, plastic chair) to push person away from source",
+      "Call 108 immediately \u2014 even if person appears fine",
+      "Check for breathing and pulse \u2014 start CPR if absent",
+      "Look for entry and exit burn wounds \u2014 treat as burn with cool water",
+      "Do not move person with suspected spinal injury from severe shock"
+    ],
+    "home_remedies": [
+      "No home remedy \u2014 electrical injury requires emergency medical evaluation",
+      "Cool water on burn entry and exit points \u2014 same as burn management after safety is ensured"
+    ],
+    "do_not_do": [
+      "Do NOT touch the person while they are still in contact with electricity \u2014 you will also be electrocuted",
+      "Do not use wet objects to disconnect source",
+      "Do not assume person is fine because they are conscious \u2014 internal injuries and arrhythmia can develop hours later",
+      "Do not leave person unmonitored \u2014 cardiac arrhythmia can appear late"
+    ],
+    "go_to_doctor_if": [
+      "All electric shock victims \u2014 always, even if apparently fine",
+      "Burns at entry and exit points \u2014 require wound care",
+      "Palpitations, chest pain, or shortness of breath after shock",
+      "Confusion or memory loss after shock",
+      "Unconsciousness even briefly"
+    ],
+    "tags": [
+      "electric shock",
+      "first aid",
+      "emergency",
+      "electrocution",
+      "life-threatening"
+    ]
+  },
+  {
+    "id": "FA-0025",
+    "name": "First Aid for Constipation",
+    "category": "first_aid",
+    "condition": "Constipation",
+    "severity_level": "mild",
+    "when_to_apply": "No bowel movement for 2\u20133 days; hard dry stools; straining; bloating; sense of incomplete evacuation",
+    "immediate_steps": [
+      "Drink 2\u20133 glasses of warm water immediately on waking \u2014 stimulates bowel movement",
+      "Walk or do light physical activity \u2014 movement stimulates intestinal peristalsis",
+      "Take psyllium husk (Isabgol) \u2014 2 tsp in large glass of warm water",
+      "Take lactulose syrup 15\u201330 mL if available",
+      "Do not ignore urge to pass stool \u2014 postponing worsens constipation",
+      "Sit in correct posture on toilet (feet on a small stool \u2014 squatting angle improves rectal alignment)"
+    ],
+    "home_remedies": [
+      "Triphala churna \u2014 1 tsp in warm water at bedtime; the gold standard Ayurvedic bowel regulator; used in Indian homes for generations",
+      "Castor oil \u2014 1\u20132 teaspoons at bedtime; strong natural laxative; used for acute constipation in Indian households",
+      "Warm water with lemon and honey \u2014 first thing in morning on empty stomach; natural bowel stimulant",
+      "Soaked raisins (kismis) \u2014 soak overnight, eat with water in morning; natural mild laxative",
+      "Anjeer (Fig) \u2014 2\u20133 soaked figs in water overnight; eat morning; rich in fiber and natural laxative compounds",
+      "Papaya \u2014 fresh ripe papaya; enzyme papain and high fiber stimulate bowel movement",
+      "Ghee in warm milk \u2014 1 tsp ghee in warm milk at bedtime; lubricates colon; classic Indian constipation remedy"
+    ],
+    "do_not_do": [
+      "Do not use stimulant laxatives (bisacodyl) daily \u2014 causes dependence",
+      "Do not strain excessively \u2014 causes hemorrhoids and anal fissure",
+      "Do not ignore constipation lasting more than 2 weeks",
+      "Do not give enemas to children at home without guidance"
+    ],
+    "go_to_doctor_if": [
+      "Constipation with blood in stool",
+      "Constipation alternating with diarrhea \u2014 possible IBS or colon cancer",
+      "Constipation with weight loss or rectal pain",
+      "New onset constipation in person over 50",
+      "No bowel movement for more than 5 days"
+    ],
+    "tags": [
+      "constipation",
+      "first aid",
+      "home remedy",
+      "triphala",
+      "Indian home remedy constipation"
+    ]
+  },
+  {
+    "id": "FA-0026",
+    "name": "First Aid for Joint Pain / Arthritis Flare",
+    "category": "first_aid",
+    "condition": "Joint Pain / Arthritis Flare",
+    "severity_level": "mild_to_moderate",
+    "when_to_apply": "Sudden joint pain, stiffness, or swelling; morning joint stiffness; post-exercise joint pain",
+    "immediate_steps": [
+      "Rest the affected joint \u2014 avoid activities that worsen pain",
+      "Apply ice pack for acute swollen joint (first 48 hours) \u2014 15\u201320 minutes every 2 hours",
+      "Apply heat (warm cloth or heating pad) for stiff joints or chronic pain",
+      "Take ibuprofen 400 mg or diclofenac 50 mg with food",
+      "Elevate swollen joint if possible",
+      "Gentle range-of-motion movement \u2014 do not completely immobilize"
+    ],
+    "home_remedies": [
+      "Haldi (Turmeric) milk with black pepper \u2014 1/2 tsp turmeric + pinch of black pepper in warm milk; curcumin is an evidence-based anti-inflammatory",
+      "Ajwain (Carom) seed water \u2014 boil 1 tsp ajwain; drink twice daily; traditional Indian joint pain remedy",
+      "Mahanarayan oil massage \u2014 warm Ayurvedic oil; gentle massage around (not on) inflamed joint; improves circulation",
+      "Castor oil pack \u2014 warm castor oil applied on cloth wrapped around joint; reduces inflammation",
+      "Ginger tea \u2014 anti-inflammatory; effective for OA knee pain per clinical studies",
+      "Fenugreek (Methi) seeds \u2014 soak overnight, eat paste in morning; traditional anti-inflammatory remedy",
+      "Mustard oil with camphor massage \u2014 warm mustard oil with dissolved camphor applied to joint; widely used in North Indian homes"
+    ],
+    "do_not_do": [
+      "Do not apply heat to acutely swollen hot joint \u2014 worsens inflammation",
+      "Do not massage a severely inflamed red hot joint",
+      "Do not ignore joint swelling with fever \u2014 possible septic arthritis (emergency)",
+      "Do not self-inject steroids \u2014 joint infections from improper technique are catastrophic"
+    ],
+    "go_to_doctor_if": [
+      "Hot, red, swollen joint with fever \u2014 septic arthritis emergency",
+      "Single joint suddenly very painful and swollen \u2014 gout or infection",
+      "Joint pain with morning stiffness lasting more than 1 hour \u2014 rheumatoid arthritis",
+      "Joint pain after injury \u2014 possible fracture or ligament tear"
+    ],
+    "tags": [
+      "joint pain",
+      "first aid",
+      "home remedy",
+      "turmeric milk",
+      "Indian home remedy arthritis"
+    ]
+  },
+  {
+    "id": "FA-0027",
+    "name": "Indian Home Remedies \u2014 General Immunity and Wellness",
+    "category": "home_remedy",
+    "condition": "General Immunity / Wellness / Preventive",
+    "severity_level": "preventive",
+    "when_to_apply": "During season change, before cold weather, after illness recovery, general immune boosting",
+    "immediate_steps": [
+      "Maintain hydration \u2014 8 glasses of water daily; warm water preferred in Indian tradition",
+      "Eat home-cooked food with haldi, jeera, dhania, adrak, lahsun \u2014 all spices with medicinal properties",
+      "Daily Surya namaskar (12 rounds) or 30 minutes walking",
+      "Sleep 7\u20138 hours",
+      "Avoid cold water during illness \u2014 warm beverages always preferred in Indian homes"
+    ],
+    "home_remedies": [
+      "Morning Kadha \u2014 tulsi + ginger + black pepper + cloves + cinnamon boiled in water with honey; the ultimate Indian immunity drink",
+      "Chyawanprash \u2014 1\u20132 tsp daily with warm milk; traditional Ayurvedic formulation with 40+ herbs; enhances immunity; given to children and elderly",
+      "Giloy (Tinospora cordifolia) juice \u2014 20\u201330 mL daily on empty stomach; anti-inflammatory and immunity booster; widely used in Indian homes",
+      "Amla (Indian Gooseberry) \u2014 richest natural source of Vitamin C; 1 fresh amla or 1 tsp amla powder daily",
+      "Ashwagandha (Withania somnifera) \u2014 1/2 tsp with warm milk at bedtime; adaptogen, stress reducer, immunity booster; WHO-recognized",
+      "Haldi (Turmeric) + Milk (Haldi Doodh) \u2014 golden milk daily; anti-inflammatory, anti-microbial, immune boosting",
+      "Neem leaves \u2014 chew 5 fresh neem leaves every morning on empty stomach; blood purifier; antifungal and antibacterial",
+      "Tulsi leaves \u2014 chew 5 fresh tulsi leaves daily; antimicrobial and adaptogenic",
+      "Ginger, garlic, and lemon juice \u2014 mix and take 1 tsp daily; antimicrobial; reduces risk of common cold",
+      "Pomegranate and beetroot juice \u2014 antioxidant-rich; increases hemoglobin and immunity"
+    ],
+    "do_not_do": [
+      "Do not take Ayurvedic herbs without checking for interactions with prescription medications",
+      "Do not replace prescribed medicines with home remedies for serious conditions",
+      "Do not give adult herbal preparations to infants without guidance"
+    ],
+    "go_to_doctor_if": [
+      "Persistent weakness or fatigue despite home remedies",
+      "Recurring infections suggesting immune deficiency",
+      "Weight loss without trying"
+    ],
+    "tags": [
+      "immunity",
+      "home remedy",
+      "Ayurvedic",
+      "preventive health",
+      "Indian wellness"
+    ]
+  },
+  {
+    "id": "FA-0028",
+    "name": "First Aid for Diabetic Emergency (Hypoglycemia at Home)",
+    "category": "first_aid",
+    "condition": "Hypoglycemia (Low Blood Sugar in Diabetics)",
+    "severity_level": "urgent",
+    "when_to_apply": "Diabetic patient with sweating, trembling, confusion, palpitations, dizziness, or loss of consciousness",
+    "immediate_steps": [
+      "If conscious \u2014 give 15 g fast-acting glucose immediately: 4\u20135 glucose tablets, 150 mL fruit juice, 1 tsp sugar dissolved in water, or 3 tsp honey",
+      "Recheck blood sugar after 15 minutes \u2014 if still low, repeat glucose",
+      "Once blood sugar normal \u2014 give a proper meal or snack with complex carbohydrates",
+      "If unconscious \u2014 do NOT give anything by mouth; place in recovery position; rub glucagon gel or honey on gums if available; call 108",
+      "Give glucagon injection if available and trained"
+    ],
+    "home_remedies": [
+      "Sugar water / glucose water \u2014 fastest home treatment; dissolve 2\u20133 tsp sugar in 100 mL water; drink immediately",
+      "Gud (Jaggery) water \u2014 dissolve small piece of jaggery in water; traditional Indian quick glucose source",
+      "Banana \u2014 1\u20132 bananas; fast natural sugar source; widely available in Indian homes",
+      "Coconut water with sugar \u2014 natural electrolytes plus glucose; used in Indian homes for sugar recovery"
+    ],
+    "do_not_do": [
+      "Do not give anything by mouth to unconscious person",
+      "Do not give protein or fat foods for immediate low sugar \u2014 they work too slowly",
+      "Do not skip a meal after hypoglycemia \u2014 follow up with full meal",
+      "Do not delay treatment \u2014 brain damage occurs within minutes of severe hypoglycemia"
+    ],
+    "go_to_doctor_if": [
+      "Unconscious from hypoglycemia \u2014 emergency",
+      "Hypoglycemia not responding after two glucose doses",
+      "Severe or recurrent hypoglycemia \u2014 medication dose adjustment needed",
+      "First hypoglycemic episode \u2014 doctor needs to review insulin or medication dose"
+    ],
+    "tags": [
+      "hypoglycemia",
+      "diabetes emergency",
+      "first aid",
+      "low blood sugar",
+      "diabetic home care"
+    ]
+  },
+  {
+    "id": "FA-0029",
+    "name": "First Aid for Stroke (Brain Attack)",
+    "category": "first_aid",
+    "condition": "Stroke",
+    "severity_level": "life_threatening",
+    "when_to_apply": "Use FAST test: Face drooping, Arm weakness, Speech difficulty, Time to call 108",
+    "immediate_steps": [
+      "Use FAST \u2014 Face drooping + Arm weakness + Speech slurred = call 108 immediately",
+      "Note time when symptoms started \u2014 crucial for clot-busting treatment (tPA given within 4.5 hours)",
+      "Do NOT give aspirin (unlike heart attack \u2014 stroke may be hemorrhagic and aspirin worsens it)",
+      "Lay person on their side if unconscious \u2014 recovery position",
+      "Keep airway clear \u2014 remove dentures, do not give anything to eat or drink",
+      "Stay calm and reassure person \u2014 anxiety raises blood pressure and worsens stroke"
+    ],
+    "home_remedies": [
+      "No home remedy for acute stroke \u2014 every minute of delay = millions of brain cells lost",
+      "Prevention: Arjuna bark tea, garlic daily, turmeric milk \u2014 traditional Indian cardiovascular protective practices"
+    ],
+    "do_not_do": [
+      "Do not give aspirin \u2014 stroke may be hemorrhagic (bleeding), aspirin would be fatal",
+      "Do not give food or water \u2014 swallowing reflex may be impaired",
+      "Do not leave person alone",
+      "Do not wait to see if symptoms pass \u2014 act on first sign; even if symptoms resolve (TIA), emergency evaluation is needed"
+    ],
+    "go_to_doctor_if": [
+      "Any FAST symptom \u2014 immediately without delay",
+      "Sudden severe headache (worst of life) \u2014 possible hemorrhagic stroke",
+      "Sudden vision loss in one eye",
+      "Sudden loss of balance or coordination"
+    ],
+    "tags": [
+      "stroke",
+      "first aid",
+      "brain attack",
+      "FAST test",
+      "neurological emergency"
+    ]
+  },
+  {
+    "id": "FA-0030",
+    "name": "First Aid for Food Poisoning",
+    "category": "first_aid",
+    "condition": "Food Poisoning",
+    "severity_level": "mild_to_moderate",
+    "when_to_apply": "Nausea, vomiting, diarrhea, stomach cramps within hours of eating; fever; weakness",
+    "immediate_steps": [
+      "Rest and let vomiting clear the toxin \u2014 do not suppress initial vomiting",
+      "Start ORS (oral rehydration solution) once vomiting reduces \u2014 small sips every 5 minutes",
+      "Take ondansetron ODT 4 mg if available to control severe vomiting",
+      "Take loperamide (Imodium) 4 mg for diarrhea once vomiting is controlled \u2014 only if no blood in stool",
+      "Eat light foods once tolerated \u2014 khichdi, curd rice, banana, toast",
+      "Avoid solid food for 6\u20138 hours; liquid diet only initially"
+    ],
+    "home_remedies": [
+      "Ginger and honey tea \u2014 boil ginger, add honey; antiemetic and antimicrobial; soothes gut",
+      "Jeera (Cumin) and ajwain (Carom) boiled water \u2014 powerful gut antiseptic and antispasmodic; classic Indian food poisoning remedy",
+      "Tulsi juice \u2014 5\u201310 ml fresh tulsi juice; antimicrobial against common food pathogens",
+      "Rice kanji (rice water with salt) \u2014 restores fluids and electrolytes; gentle on inflamed gut",
+      "Curd (yogurt) with rice \u2014 probiotics help restore gut flora after food poisoning",
+      "Pomegranate rind tea \u2014 boil dried pomegranate skin in water; astringent; traditional Indian remedy for food poisoning diarrhea"
+    ],
+    "do_not_do": [
+      "Do not take antibiotics without medical advice \u2014 most food poisoning is viral or self-limiting",
+      "Do not suppress early vomiting \u2014 it is clearing the toxin",
+      "Do not eat dairy, fatty, or spicy foods until fully recovered",
+      "Do not use loperamide if blood or mucus in stool"
+    ],
+    "go_to_doctor_if": [
+      "Blood in stool or vomit",
+      "Symptoms in very young child, elderly, or immunocompromised person",
+      "Fever above 38.5\u00b0C",
+      "Unable to keep any fluid down for 12\u201324 hours",
+      "Suspected mushroom, seafood, or botulism poisoning \u2014 always emergency"
+    ],
+    "tags": [
+      "food poisoning",
+      "first aid",
+      "home remedy",
+      "gastroenteritis",
+      "Indian home remedy food poisoning"
+    ]
+  },
+  {
+    "id": "FA-0031",
+    "name": "First Aid for Minor Cuts",
+    "category": "first_aid",
+    "condition": "Minor Cuts",
+    "severity_level": "mild",
+    "when_to_apply": "Small superficial cuts from knife, glass, paper, or sharp object; minor bleeding that slows with pressure; no deep tissue visible",
+    "immediate_steps": [
+      "Wash hands with soap and water before touching the cut",
+      "Rinse cut under clean running water for 1\u20132 minutes to remove dirt and debris",
+      "Apply gentle pressure with a clean cloth or gauze for 3\u20135 minutes to stop bleeding",
+      "Once bleeding stops \u2014 apply antiseptic (Dettol diluted 1:20 with water, or Savlon, or diluted povidone-iodine)",
+      "Cover with a sterile adhesive bandage (Band-Aid) or small gauze + tape",
+      "Change dressing daily or when wet or dirty"
+    ],
+    "home_remedies": [
+      "Haldi (Turmeric) powder \u2014 sprinkle a pinch on the cut after rinsing; natural antimicrobial and clotting agent; the most classic Indian mom first aid",
+      "Honey (raw) \u2014 apply a thin layer on clean cut; antimicrobial and promotes healing; used in Indian homes before antiseptic was common",
+      "Aloe vera gel \u2014 fresh gel from leaf applied after cleaning; cools, soothes, and prevents infection",
+      "Neem leaf paste \u2014 crushed fresh neem leaves pressed on cut; antibacterial; used in South Indian homes",
+      "Coconut oil \u2014 a drop on clean minor cut; antimicrobial and skin-healing lauric acid content"
+    ],
+    "do_not_do": [
+      "Do not use cotton wool directly on cut \u2014 fibers stick to wound and restart bleeding on removal",
+      "Do not blow on the cut \u2014 mouth bacteria cause infection",
+      "Do not apply undiluted Dettol or alcohol directly \u2014 kills healing cells and causes unnecessary pain",
+      "Do not remove the scab when it forms \u2014 natural wound seal"
+    ],
+    "go_to_doctor_if": [
+      "Cut is deep, gaping, or longer than 1\u20132 cm \u2014 may need stitches",
+      "Bleeding does not stop after 10\u201315 minutes of firm pressure",
+      "Cut from rusty object or animal scratch \u2014 tetanus risk",
+      "Signs of infection appear \u2014 increasing redness, swelling, warmth, pus after 24\u201348 hours",
+      "Cut on face, hand, or near a joint \u2014 specialist care recommended"
+    ],
+    "tags": [
+      "minor cuts",
+      "first aid",
+      "wound care",
+      "home remedy cuts",
+      "Indian home remedy"
+    ]
+  },
+  {
+    "id": "FA-0032",
+    "name": "First Aid for Minor Burns",
+    "category": "first_aid",
+    "condition": "Minor Burns",
+    "severity_level": "mild",
+    "when_to_apply": "Small superficial burn from hot utensil, hot liquid splash, brief flame contact, or steam; redness, mild pain, no large blisters, area smaller than palm",
+    "immediate_steps": [
+      "Cool the burn under cool (not ice cold) running water for 10\u201320 minutes \u2014 the single most important step",
+      "Remove rings, bangles, or tight clothing near the burned area before swelling begins",
+      "After cooling \u2014 cover loosely with clean cling film or a clean non-fluffy cloth",
+      "Take paracetamol 500 mg or ibuprofen 400 mg for pain",
+      "Do not burst small blisters \u2014 they protect against infection",
+      "Apply a soothing burn gel (Burnol, aloe vera) after the cooling phase"
+    ],
+    "home_remedies": [
+      "Aloe vera gel \u2014 fresh gel from leaf applied after cooling the burn; cooling, anti-inflammatory, and promotes skin healing; widely used across Indian homes",
+      "Burnol (Turmeric-based burn ointment) \u2014 Indian pharmacy staple; apply after cooling phase; antimicrobial",
+      "Raw potato slice \u2014 placed on minor burn after cooling; starch and moisture provides relief; traditional Indian remedy",
+      "Coconut oil \u2014 applied after 24 hours on healed minor burns; moisturizes and reduces scarring",
+      "Cold milk compress \u2014 cotton soaked in cold milk; mildly cooling and soothing for very minor burns in Indian homes"
+    ],
+    "do_not_do": [
+      "Do not apply toothpaste, butter, ghee, oil, or ice \u2014 traps heat, causes infection, worsens damage",
+      "Do not use ice or ice-cold water \u2014 causes frostbite and additional tissue damage",
+      "Do not burst blisters \u2014 removes natural protective barrier",
+      "Do not apply cotton wool directly \u2014 fibers stick to burn surface"
+    ],
+    "go_to_doctor_if": [
+      "Burn larger than the person's palm size",
+      "Burn on face, hands, feet, genitals, or over joints \u2014 always specialist care",
+      "Deep burns \u2014 white, brown, or black (painless) skin indicates serious depth",
+      "Burns in children, diabetics, or elderly \u2014 always evaluate",
+      "Blisters larger than 2 cm or infected-looking burn"
+    ],
+    "tags": [
+      "minor burns",
+      "first aid",
+      "aloe vera burn",
+      "burn home remedy",
+      "Indian home remedy burns"
+    ]
+  },
+  {
+    "id": "FA-0033",
+    "name": "First Aid for Indigestion",
+    "category": "first_aid",
+    "condition": "Indigestion",
+    "severity_level": "mild",
+    "when_to_apply": "After eating \u2014 feeling of fullness, bloating, upper abdominal discomfort, nausea, belching, heaviness in stomach, gas",
+    "immediate_steps": [
+      "Sit upright \u2014 do not lie down after eating; this is the most common mistake worsening indigestion",
+      "Walk slowly for 10\u201315 minutes after a heavy meal \u2014 promotes gastric emptying",
+      "Take an antacid (Digene, Gelusil, or Eno) if available",
+      "Sip warm water slowly \u2014 helps break down food and ease gut movement",
+      "Loosen tight clothing around abdomen \u2014 belt or waistband compression worsens bloating",
+      "Gentle clockwise abdominal massage \u2014 follows direction of colon; relieves gas and bloating"
+    ],
+    "home_remedies": [
+      "Saunf (Fennel seeds) \u2014 chew 1 tsp after meals; most common Indian post-meal digestive; relieves bloating and gas effectively",
+      "Ajwain (Carom seeds) with black salt \u2014 1/2 tsp ajwain + pinch kala namak in warm water; the number one Indian remedy for indigestion; relieves gas in minutes",
+      "Jeera (Cumin) water \u2014 boil 1 tsp cumin in water, strain, drink warm; stimulates digestive enzymes",
+      "Hing (Asafoetida) water \u2014 small pinch of hing dissolved in warm water; powerful antiflatulent; used in every Indian kitchen for stomach discomfort",
+      "Pudina (Mint) chutney or tea \u2014 fresh mint relieves indigestion and nausea; commonly served in Indian homes after rich meals",
+      "Ginger juice with honey \u2014 1 tsp ginger juice + 1 tsp honey; stimulates digestive juices",
+      "Paan (Betel leaf) without tobacco \u2014 traditional post-meal Indian digestive; aids digestion and freshens breath"
+    ],
+    "do_not_do": [
+      "Do not eat more to feel better \u2014 overeating worsens indigestion",
+      "Do not lie down for at least 2 hours after eating",
+      "Do not take antacids with other medications \u2014 interferes with absorption",
+      "Do not drink carbonated drinks \u2014 temporarily feels good but worsens bloating"
+    ],
+    "go_to_doctor_if": [
+      "Indigestion lasting more than 2 weeks despite home treatment",
+      "Pain that radiates to back or chest",
+      "Indigestion with unexplained weight loss \u2014 red flag",
+      "Vomiting blood or black tarry stools",
+      "New indigestion in person over 50 \u2014 rule out stomach cancer"
+    ],
+    "tags": [
+      "indigestion",
+      "first aid",
+      "home remedy",
+      "ajwain hing",
+      "Indian digestive remedy"
+    ]
+  },
+  {
+    "id": "FA-0034",
+    "name": "First Aid for Hyperacidity",
+    "category": "first_aid",
+    "condition": "Hyperacidity",
+    "severity_level": "mild",
+    "when_to_apply": "Sour burping, burning sensation in stomach and chest, acid taste in mouth, nausea from excess acid, stomach pain after spicy food or empty stomach",
+    "immediate_steps": [
+      "Drink a glass of plain cold milk \u2014 alkaline protein buffers excess stomach acid quickly; fastest home relief",
+      "Take an antacid immediately \u2014 Digene gel, Gelusil, or Eno sachet in water",
+      "Sit upright \u2014 do not lie down",
+      "Avoid all trigger foods \u2014 spicy food, tea, coffee, citrus, tomato",
+      "If antacid not available \u2014 take omeprazole 20 mg or pantoprazole 40 mg if on hand",
+      "Eat a small light meal \u2014 empty stomach worsens hyperacidity"
+    ],
+    "home_remedies": [
+      "Cold milk \u2014 a large glass of plain cold milk; most popular Indian home remedy for hyperacidity; immediate buffering effect",
+      "Banana \u2014 ripe banana coats stomach lining and neutralizes acid; alkaline fruit",
+      "Coconut water \u2014 naturally alkaline; cools and soothes acidic stomach; very popular in South and West India",
+      "Saunf (Fennel) and mishri water \u2014 boil fennel seeds with rock sugar, cool, drink; traditional Indian acid remedy",
+      "Aam panna (Raw mango cooler) \u2014 prevents hyperacidity in summer; balances stomach acids",
+      "Gulkand (Rose petal jam) \u2014 1 tsp gulkand with cold milk; Ayurvedic cooling remedy for acidity and pitta",
+      "Amla (Indian gooseberry) juice \u2014 20 mL on empty stomach; regulates acid secretion; rich in Vitamin C"
+    ],
+    "do_not_do": [
+      "Do not take antacids with meals \u2014 take 1\u20132 hours after",
+      "Do not consume tea, coffee, or alcohol on empty stomach",
+      "Do not use baking soda daily \u2014 sodium overload and rebound acidity",
+      "Do not confuse hyperacidity chest burn with heart attack pain \u2014 if in doubt, seek emergency care"
+    ],
+    "go_to_doctor_if": [
+      "Hyperacidity more than 2\u20133 times a week \u2014 GERD requiring PPI treatment",
+      "Burning sensation reaching throat or mouth regularly",
+      "Night-time acid waking you up \u2014 erosive esophagitis risk",
+      "Chest pain with acid \u2014 rule out cardiac cause in high-risk individuals",
+      "Difficulty swallowing with hyperacidity"
+    ],
+    "tags": [
+      "hyperacidity",
+      "first aid",
+      "home remedy",
+      "cold milk",
+      "Indian home remedy acidity"
+    ]
+  },
+  {
+    "id": "FA-0035",
+    "name": "First Aid for Piles (Hemorrhoids \u2014 Minor)",
+    "category": "first_aid",
+    "condition": "Piles (Minor Hemorrhoids)",
+    "severity_level": "mild",
+    "when_to_apply": "Mild rectal bleeding (bright red on toilet paper), itching around anus, mild discomfort while sitting or passing stool, external soft lump near anus",
+    "immediate_steps": [
+      "Sitz bath \u2014 sit in warm shallow water (not hot) for 10\u201315 minutes 2\u20133 times a day; reduces swelling and discomfort",
+      "Apply over-the-counter hemorrhoid cream (Proctosedyl, Faktu, or Anovate) to affected area",
+      "Use moist toilet paper or water jet (Indian-style bidet/health faucet) \u2014 never dry rough paper",
+      "Increase fiber intake immediately \u2014 fruits, vegetables, isabgol",
+      "Drink 8\u201310 glasses of water daily",
+      "Avoid straining on toilet \u2014 use footstool to adopt squatting position which straightens anorectal angle"
+    ],
+    "home_remedies": [
+      "Sitz bath with rock salt \u2014 warm water with sendha namak; reduces inflammation and itching; classic Indian home treatment",
+      "Coconut oil \u2014 applied externally to anal area; lubricates and soothes; anti-inflammatory",
+      "Aloe vera gel \u2014 applied topically around anus; cooling and anti-inflammatory; widely used in Indian homes",
+      "Triphala churna \u2014 1 tsp in warm water at bedtime; Ayurvedic bowel regulator that prevents straining; foundational Indian remedy for piles",
+      "Radish (Mooli) juice \u2014 50\u201360 mL fresh radish juice with honey twice daily; traditional Indian pile management remedy",
+      "Witch hazel (pads or lotion) \u2014 astringent; reduces swelling and bleeding; available at Indian pharmacies"
+    ],
+    "do_not_do": [
+      "Do not strain while passing stool \u2014 most important factor in worsening piles",
+      "Do not sit on toilet for more than 5 minutes \u2014 reduces rectal vein congestion",
+      "Do not use dry or rough toilet paper \u2014 causes bleeding and irritation",
+      "Do not ignore rectal bleeding \u2014 always confirm it is from piles and not something more serious"
+    ],
+    "go_to_doctor_if": [
+      "Bleeding that is heavy or does not stop after stool",
+      "Pain so severe sitting is impossible \u2014 possible thrombosed hemorrhoid needing drainage",
+      "Prolapsed hemorrhoid that does not reduce back inside",
+      "Any rectal bleeding in person over 40 \u2014 rule out colorectal cancer",
+      "No improvement after 1\u20132 weeks of home treatment"
+    ],
+    "tags": [
+      "piles",
+      "hemorrhoids",
+      "first aid",
+      "home remedy",
+      "sitz bath"
+    ]
+  },
+  {
+    "id": "FA-0036",
+    "name": "First Aid for Urinary Tract Infection \u2014 Early/Mild",
+    "category": "first_aid",
+    "condition": "Urinary Tract Infection (Early / Mild UTI)",
+    "severity_level": "mild",
+    "when_to_apply": "Burning sensation while urinating, increased urge to urinate frequently, cloudy or slightly smelly urine, mild lower abdominal discomfort; no fever or back pain yet",
+    "immediate_steps": [
+      "Drink large amounts of water immediately \u2014 2\u20133 litres per day to flush bacteria from bladder",
+      "Urinate frequently \u2014 do not hold urine; each void flushes more bacteria",
+      "Take OTC urinary analgesic (Phenazopyridine / Pyridium) if available \u2014 relieves burning sensation",
+      "Take cranberry juice or extract if available",
+      "Avoid coffee, alcohol, and spicy food \u2014 irritate the bladder",
+      "Seek medical care for antibiotic prescription \u2014 UTI does not fully resolve without antibiotics in most cases"
+    ],
+    "home_remedies": [
+      "Plenty of water \u2014 most important; 3\u20134 litres daily; dilutes bacteria and flushes bladder; basic Indian advice",
+      "Barley water (Jau pani) \u2014 boil barley grains in water, cool, drink throughout day; traditional Indian diuretic and bladder soother",
+      "Coconut water \u2014 natural diuretic and electrolyte; widely used in India for urinary complaints",
+      "Coriander (Dhania) seed water \u2014 soak 1 tbsp seeds overnight, strain, drink morning; traditional Indian UTI remedy with mild antimicrobial properties",
+      "Cranberry juice \u2014 unsweetened; prevents bacterial adhesion to bladder wall; evidence-based natural UTI preventive",
+      "Gulkand in milk \u2014 cooling Ayurvedic remedy; reduces burning sensation from UTI in Indian tradition"
+    ],
+    "do_not_do": [
+      "Do not hold urine \u2014 holding provides bacteria time to multiply",
+      "Do not take someone else's leftover antibiotics \u2014 wrong drug, wrong dose",
+      "Do not ignore symptoms hoping they resolve \u2014 uncomplicated UTI can ascend to kidney infection",
+      "Do not use public toilets without hygiene precautions \u2014 common source of UTI"
+    ],
+    "go_to_doctor_if": [
+      "Fever above 38\u00b0C with UTI symptoms \u2014 kidney infection (pyelonephritis)",
+      "Back or flank pain with burning urination",
+      "Symptoms not improving after 24\u201348 hours of increased fluids",
+      "Blood in urine",
+      "UTI in men, children, or pregnant women \u2014 always requires medical evaluation",
+      "Recurrent UTIs (more than 2 in 6 months) \u2014 investigation needed"
+    ],
+    "tags": [
+      "UTI",
+      "urinary tract infection",
+      "first aid",
+      "home remedy",
+      "barley water UTI"
+    ]
+  },
+  {
+    "id": "FA-0037",
+    "name": "First Aid for Sunstroke / Sunstroke Seasonal",
+    "category": "first_aid",
+    "condition": "Sunstroke (Seasonal / Mild Heat Illness)",
+    "severity_level": "mild_to_moderate",
+    "when_to_apply": "After prolonged sun exposure \u2014 headache, dizziness, nausea, profuse sweating, fatigue, weakness; body temperature raised but person is still sweating (heat exhaustion stage before heat stroke)",
+    "immediate_steps": [
+      "Move the person immediately to shade or cool indoor area",
+      "Lay them down and elevate feet slightly \u2014 improves blood flow to brain",
+      "Remove excess clothing and fan the person",
+      "Apply cool wet cloths to forehead, neck, and armpits",
+      "Give cool water or ORS to drink in small sips if conscious \u2014 not ice-cold water",
+      "Spray cool water on skin and fan simultaneously \u2014 most effective evaporative cooling",
+      "Monitor temperature \u2014 if above 40\u00b0C and person stops sweating or becomes confused, call 108 immediately (heat stroke)"
+    ],
+    "home_remedies": [
+      "Aam panna (Raw mango cooler) \u2014 boil raw mango, pulp with cumin, black pepper, salt, sugar, mint, water; the most effective traditional Indian sun and heat illness drink; prevents and treats mild sunstroke",
+      "Buttermilk (Chaas) with jeera and salt \u2014 cooling probiotic drink; replenishes electrolytes; the classic Indian summer remedy used widely across all regions",
+      "Kokum sherbet \u2014 dilute kokum with water and sugar; cooling; popular in Maharashtra and Goa for heat",
+      "Onion on back of neck \u2014 sliced raw onion applied to back of neck and soles of feet; traditional Indian folk remedy for sunstroke believed to draw out heat",
+      "Sattu (roasted gram flour) sharbat \u2014 sattu mixed in cold water with salt, lemon, and jeera; Bihar and UP traditional cooling summer drink",
+      "Neem water bath \u2014 neem leaves boiled in water, cooled; used as cooling bath water after sunstroke in Indian rural areas"
+    ],
+    "do_not_do": [
+      "Do not give tea, coffee, or alcohol \u2014 diuretics that worsen dehydration",
+      "Do not give ice-cold water to drink rapidly \u2014 causes stomach cramping",
+      "Do not give aspirin or paracetamol \u2014 sunstroke is not an infection-based fever; these do not help",
+      "Do not leave person in hot car or direct sun even for a minute",
+      "Do not ignore \u2014 heat exhaustion can progress to life-threatening heat stroke within 30 minutes"
+    ],
+    "go_to_doctor_if": [
+      "Temperature above 40\u00b0C (104\u00b0F) \u2014 heat stroke emergency",
+      "Person stops sweating despite being hot \u2014 dangerous sign",
+      "Confusion, slurred speech, or seizure from heat",
+      "Vomiting or inability to drink fluids",
+      "Child or elderly person with any heat illness \u2014 hospital evaluation required"
+    ],
+    "tags": [
+      "sunstroke",
+      "heat illness",
+      "first aid",
+      "aam panna",
+      "Indian summer remedy"
+    ]
+  },
+  {
+    "id": "FA-0038",
+    "name": "First Aid for Loss of Appetite",
+    "category": "first_aid",
+    "condition": "Loss of Appetite",
+    "severity_level": "mild",
+    "when_to_apply": "Not feeling hungry, unable to eat normal portions, disinterest in food, skipping meals, post-illness poor appetite, weakness from not eating",
+    "immediate_steps": [
+      "Eat small frequent meals \u2014 5\u20136 small portions rather than 3 big meals",
+      "Start with light easy-to-digest foods \u2014 khichdi, daliya, curd rice, fruit",
+      "Drink water or coconut water before meals \u2014 hydration improves appetite",
+      "Avoid eating while watching screens \u2014 distraction reduces mindful eating",
+      "Light 10-minute walk before meals \u2014 physical activity stimulates appetite",
+      "Zinc deficiency is a common cause \u2014 consider zinc supplement (20 mg/day) if loss persists"
+    ],
+    "home_remedies": [
+      "Ajwain and black salt water \u2014 1/2 tsp ajwain + pinch kala namak in warm water before meals; stimulates digestive fire (agni); classic Ayurvedic appetite stimulant",
+      "Ginger juice with rock salt \u2014 few drops on tongue before meal; stimulates saliva and gastric acid; widely used in India",
+      "Triphala churna \u2014 1 tsp in warm water at bedtime; regulates digestion and stimulates appetite by next morning",
+      "Trikatu churna (dry ginger + black pepper + long pepper) \u2014 Ayurvedic formulation; stimulates digestive enzymes; traditional Indian appetite remedy",
+      "Lemon pickle (Nimbu achar) or raw lemon juice \u2014 sour taste stimulates appetite; used widely in Indian homes",
+      "Pomegranate with black pepper and honey \u2014 traditional Indian remedy to stimulate appetite in recovering patients",
+      "Coriander and cumin seeds water \u2014 boil together, strain, drink before meals; traditional Indian digestive stimulant"
+    ],
+    "do_not_do": [
+      "Do not force-feed \u2014 causes aversion and worsens the problem",
+      "Do not eat processed or junk food to compensate \u2014 further disrupts gut",
+      "Do not ignore prolonged loss of appetite (beyond 1\u20132 weeks) \u2014 may indicate underlying illness",
+      "Do not skip meals entirely \u2014 leads to further metabolic slowdown"
+    ],
+    "go_to_doctor_if": [
+      "Loss of appetite with unexplained weight loss \u2014 red flag for cancer or chronic disease",
+      "Persisting more than 2 weeks",
+      "In children with growth failure",
+      "Accompanied by fever, night sweats, or fatigue",
+      "Post-chemotherapy or post-major illness \u2014 needs nutritional support plan"
+    ],
+    "tags": [
+      "loss of appetite",
+      "first aid",
+      "home remedy",
+      "ajwain ginger",
+      "Indian digestive remedy"
+    ]
+  },
+  {
+    "id": "FA-0039",
+    "name": "First Aid for Choking (Mild \u2014 Partial Obstruction)",
+    "category": "first_aid",
+    "condition": "Mild Choking (Partial Airway Obstruction)",
+    "severity_level": "mild_to_moderate",
+    "when_to_apply": "Person is coughing forcefully, can speak or cry, can breathe (noisy), some air passing; NOT complete airway blockage",
+    "immediate_steps": [
+      "Encourage the person to cough forcefully \u2014 the most effective way to dislodge a mild obstruction",
+      "Do not interfere with their coughing \u2014 it is the body's best mechanism",
+      "Stay with the person and reassure them calmly",
+      "If coughing is effective and object dislodges \u2014 give sips of water",
+      "If coughing weakens and person cannot breathe \u2014 escalate to full back blows and Heimlich maneuver immediately",
+      "For a child \u2014 allow natural coughing first; back blows only if cough weakens"
+    ],
+    "home_remedies": [
+      "Warm water sips \u2014 between coughs; helps loosen food particle",
+      "A gentle pat on the upper back (not forceful blow) \u2014 encourages coughing in mild choking",
+      "Honey and warm water \u2014 after object clears; soothes irritated throat",
+      "Leaning forward while coughing \u2014 gravity assists dislodgment; instinctive in Indian home management"
+    ],
+    "do_not_do": [
+      "Do not do back blows or Heimlich if person is still coughing effectively \u2014 may dislodge object deeper",
+      "Do not give water if airway is not yet clear \u2014 may worsen blockage",
+      "Do not leave person alone \u2014 obstruction can worsen rapidly",
+      "Do not perform blind finger sweep in mouth \u2014 may push object deeper"
+    ],
+    "go_to_doctor_if": [
+      "Coughing weakens or stops \u2014 immediate escalation needed",
+      "Object felt to be still in throat after clearing",
+      "Any breathing difficulty, voice change, or stridor after choking episode",
+      "Child who has swallowed a small object \u2014 X-ray to confirm passage",
+      "Prolonged coughing or pain in throat after choking"
+    ],
+    "tags": [
+      "mild choking",
+      "partial airway obstruction",
+      "first aid",
+      "cough reflex",
+      "choking home care"
+    ]
+  },
+  {
+    "id": "FA-0040",
+    "name": "First Aid for Short Seizure (Post-Seizure Home Care)",
+    "category": "first_aid",
+    "condition": "Short Seizure (Post-ictal Home Care)",
+    "severity_level": "mild_to_moderate",
+    "when_to_apply": "Known epileptic patient has a brief seizure (under 3\u20135 minutes) that stops on its own; person is now post-ictal (drowsy, confused, tired after seizure)",
+    "immediate_steps": [
+      "After seizure stops \u2014 place person in recovery position (on their side) to prevent choking",
+      "Clear the area of hard objects \u2014 check for injury from fall",
+      "Stay with the person and speak calmly \u2014 they will be confused (post-ictal state); reassure them",
+      "Do not offer food or water until person is fully alert and can swallow safely",
+      "Let them rest and sleep \u2014 post-ictal fatigue is normal and may last 30\u201360 minutes",
+      "Note seizure duration, type of movements, and any injury \u2014 report to neurologist",
+      "Check if person took their anti-epileptic medication today \u2014 missed dose is the most common trigger"
+    ],
+    "home_remedies": [
+      "Quiet recovery environment \u2014 reduce noise, dim lights; post-ictal brain is hypersensitive",
+      "Warm water when alert \u2014 hydration after seizure; gentle warm water with sugar if exhausted",
+      "Shankhpushpi and Brahmi \u2014 traditional Ayurvedic nervine tonics used as long-term maintenance in Indian homes (not during or after acute seizure)",
+      "Adequate sleep \u2014 most important recovery aid; sleep deprivation is a common seizure trigger"
+    ],
+    "do_not_do": [
+      "Do not give anything by mouth until fully conscious and alert",
+      "Do not restrain the person during or after seizure",
+      "Do not leave person alone immediately after seizure \u2014 second seizure possible",
+      "Do not drive the person yourself if you are shaken \u2014 call family or taxi"
+    ],
+    "go_to_doctor_if": [
+      "Seizure lasting more than 5 minutes \u2014 status epilepticus emergency; call 108",
+      "Person does not regain normal consciousness within 30 minutes",
+      "Injury occurred during the seizure (head injury, fracture)",
+      "First-ever seizure in the person",
+      "Two or more seizures within 24 hours"
+    ],
+    "tags": [
+      "seizure home care",
+      "post-ictal care",
+      "epilepsy first aid",
+      "short seizure",
+      "mild seizure management"
+    ]
+  }
+]
