@@ -55,7 +55,7 @@ from langchain_core.documents import Document
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from config import DataPaths, VectorStoreConfig, LANGCHAIN_API_KEY, LANGCHAIN_PROJECT
-from src.schemas import (
+from src.schema.schemas import (
     MedicineRecord, DoctorRecord, FirstAidRecord,
     validate_json_records,
 )
@@ -63,7 +63,7 @@ from src.rag.document_builder import (
     MedicineDocumentBuilder,
     DoctorDocumentBuilder,
     FirstAidDocumentBuilder,
-    PatientDocumentBuilder,
+    LabTestDocumentBuilder,
 )
 from src.rag.vector_store_manager import VectorStoreManager
 
@@ -94,12 +94,12 @@ PIPELINE_CONFIG = {
         "data_path":      DataPaths.FIRST_AID_JSON,
         "description":    "First aid + Indian home remedies",
     },
-    "patients": {
-        "builder_cls":    PatientDocumentBuilder,
-        "collection":     VectorStoreConfig.COLLECTION_PATIENTS,
+    "lab_tests": {
+        "builder_cls":    LabTestDocumentBuilder,
+        "collection":     VectorStoreConfig.COLLECTION_LAB_TESTS,
         "schema_cls":     None,
-        "data_path":      DataPaths.PATIENTS_JSON,
-        "description":    "Patient records for context",
+        "data_path":      DataPaths.LABTEST_JSON,
+        "description":    "Lab test data for context",
     },
 }
 

@@ -25,7 +25,7 @@ class VectorStoreConfig:
     COLLECTION_MEDICINE    = "medicine_data"
     COLLECTION_DOCTORS     = "doctor_data"
     COLLECTION_FIRST_AID   = "first_aid_data"
-    COLLECTION_PATIENTS    = "patient_data"
+    COLLECTION_LAB_TESTS   = "lab_test_data"
 
     DISTANCE_METRIC        = "cosine"
     HNSW_SPACE             = "cosine"
@@ -47,13 +47,13 @@ class ChunkConfig:
     DOCTOR_OVERLAP         = 50
     FIRST_AID_CHUNK_SIZE   = 700
     FIRST_AID_OVERLAP      = 100
-    PATIENT_CHUNK_SIZE     = 800
-    PATIENT_OVERLAP        = 100
+    LABTEST_CHUNK_SIZE     = 800
+    LABTEST_OVERLAP        = 100
 
 class DataPaths:
     MEDICINE_JSON    = str(BASE_DIR / "data" / "medicine_data.json")
     DOCTORS_JSON     = str(BASE_DIR / "data" / "doctors_full.json")
     FIRST_AID_JSON   = str(BASE_DIR / "data" / "first_aid_data.json")
-    PATIENTS_JSON    = str(BASE_DIR / "data" / "patient_sample.json")
+    LABTEST_JSON     = str(BASE_DIR / "data" / "lab_test_data.json")
 
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")

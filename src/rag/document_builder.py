@@ -206,64 +206,58 @@ class FirstAidDocumentBuilder:
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
 
-
-class PatientDocumentBuilder:
+class LabTestDocumentBuilder:
     """
-    Converts patient data into Documents.
-    Patient data is the most sensitive — metadata is minimal by design.
-    page_content is the clinical summary used for context retrieval.
+    Converts lab test JSON into Documents.
+
+    page_content = patient scenario + recommended tests + reasoning
+    metadata     = filterable fields (severity, condition, etc.)
     """
 
     def build(self) -> List[Document]:
-        data = self._load(DataPaths.PATIENTS_JSON)
+        data = self._load(DataPaths.LABTEST_JSON)
         docs = []
+
         for item in data:
             content = self._build_content(item)
             metadata = self._build_metadata(item)
+
             docs.append(Document(page_content=content, metadata=metadata))
-        print(f"[PatientBuilder] Built {len(docs)} documents")
+
+        print(f"[LabTestBuilder] Built {len(docs)} documents")
         return docs
 
     def _build_content(self, item: Dict[str, Any]) -> str:
-        personal = item.get("personal_info", {})
-        diagnoses = [d["name"] for d in item.get("diagnoses", [])]
-        allergies = [f"{a['substance']} ({a['reaction']})" for a in item.get("allergies", [])]
-        meds = [f"{m['name']} {m['dose']} {m['frequency']}" for m in item.get("current_medications", [])]
-        vitals = item.get("vitals_last_recorded", {})
-        labs = item.get("lab_results_last", {})
+        tests = item.get("recommended_tests", [])
+        test_lines = [
+            f"{t['test_name']} (Reason: {t['reason']})"
+            for t in tests
+        ]
+        tests_text = " | ".join(test_lines)
+
+        conditions = ", ".join(item.get("possible_conditions", []))
 
         content = (
-            f"Patient: {personal.get('full_name', '')}. "
-            f"Age: {personal.get('age', '')} years. "
-            f"Gender: {personal.get('gender', '')}. "
-            f"Blood group: {personal.get('blood_group', '')}. "
-            f"Active diagnoses: {', '.join(diagnoses)}. "
-            f"Known allergies: {', '.join(allergies)}. "
-            f"Current medications: {' | '.join(meds)}. "
-            f"Last BP: {vitals.get('blood_pressure_systolic', '')}/{vitals.get('blood_pressure_diastolic', '')} mmHg. "
-            f"Last weight: {vitals.get('weight_kg', '')} kg. "
-            f"BMI: {vitals.get('bmi', '')}. "
-            f"HbA1c: {labs.get('hba1c_percent', '')}%. "
-            f"eGFR: {labs.get('egfr_ml_min', '')} mL/min. "
-            f"Hospital: {item.get('hospital_name', '')}. "
-            f"City: {item.get('hospital_city', '')}."
+            f"Patient complaint: {item.get('patient_input', '')}. "
+            f"Possible conditions: {conditions}. "
+            f"Recommended lab tests: {tests_text}. "
+            f"Severity level: {item.get('severity', '')}. "
+            f"Suggested specialist: {item.get('specialist_referral', '')}."
         )
+
         return content.strip()
 
     def _build_metadata(self, item: Dict[str, Any]) -> Dict[str, Any]:
-        personal = item.get("personal_info", {})
         return {
-            "id":             item.get("id", ""),
-            "gender":         personal.get("gender", ""),
-            "blood_group":    personal.get("blood_group", ""),
-            "state":          item.get("hospital_state", ""),
-            "city":           item.get("hospital_city", ""),
-            "hospital":       item.get("hospital_name", ""),
-            "status":         item.get("status", "active"),
-            "source":         "patient_db",
-            "data_type":      "patient",
+            "id": item.get("id", ""),
+            "severity": item.get("severity", ""),
+            "specialist": item.get("specialist_referral", ""),
+            "data_type": "lab_test",
+            "source": "lab_test_db",
         }
 
     def _load(self, path: str) -> List[Dict]:
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
+
+
