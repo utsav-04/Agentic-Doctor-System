@@ -120,6 +120,52 @@ class FirstAidRecord(BaseModel):
     tags: List[str] = Field(..., min_length=1)
 
 
+class RecommendedTest(BaseModel):
+    """A single test inside a LabTestRecord."""
+    test_name: str = Field(..., min_length=2)
+    reason: str = Field(..., min_length=3)
+
+
+class LabTestRecord(BaseModel):
+    """
+    Validates one record from lab_test_data.json.
+
+    Example record:
+    {
+      "id": "MED-001",
+      "patient_input": "fever from 2 days, body pain, headache...",
+      "recommended_tests": [
+        {"test_name": "CBC", "reason": "check infection"},
+        ...
+      ],
+      "possible_conditions": ["Viral Fever", "Dengue"],
+      "severity": "medium",
+      "specialist_referral": "General Physician"
+    }
+    """
+    id: str = Field(..., min_length=1)
+    patient_input: str = Field(..., min_length=5)
+    recommended_tests: List[RecommendedTest] = Field(..., min_length=1)
+    possible_conditions: List[str] = Field(..., min_length=1)
+    severity: Literal["low", "medium", "high", "critical"]
+    specialist_referral: str = Field(..., min_length=2)
+
+    @field_validator("possible_conditions")
+    @classmethod
+    def no_empty_conditions(cls, v: List[str]) -> List[str]:
+        cleaned = [c.strip() for c in v if c.strip()]
+        if not cleaned:
+            raise ValueError("possible_conditions must have at least one non-empty entry")
+        return cleaned
+
+    @field_validator("recommended_tests")
+    @classmethod
+    def at_least_one_test(cls, v: List[RecommendedTest]) -> List[RecommendedTest]:
+        if not v:
+            raise ValueError("recommended_tests must have at least one test")
+        return v
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # RETRIEVAL OUTPUT SCHEMAS  (validate what RAG returns)
 # ─────────────────────────────────────────────────────────────────────────────
@@ -273,6 +319,64 @@ class RetrievedFirstAid(BaseModel):
         )
 
 
+class RetrievedLabTest(BaseModel):
+    """
+    A single lab test result returned by the RAG retriever.
+    Built from a LabTestRecord document stored in ChromaDB.
+    """
+    id: str
+    patient_input: str
+    possible_conditions: List[str]
+    recommended_tests: List[Dict[str, str]]   # [{"test_name": ..., "reason": ...}]
+    severity: str
+    specialist_referral: str
+    relevance_score: Optional[float] = Field(default=None, ge=0.0, le=1.0)
+
+    @classmethod
+    def from_document(cls, doc: Any, score: Optional[float] = None) -> "RetrievedLabTest":
+        """
+        Parses a LangChain Document back into a RetrievedLabTest.
+        Uses metadata first (fast), falls back to content parsing.
+        """
+        import re
+        meta    = doc.metadata
+        content = doc.page_content
+
+        def extract(label: str) -> str:
+            pattern = rf"{re.escape(label)}:\s*([^.]+)\."
+            m = re.search(pattern, content)
+            return m.group(1).strip() if m else ""
+
+        # Parse possible_conditions from content
+        conditions_raw = extract("Possible conditions")
+        conditions = [c.strip() for c in conditions_raw.split(",") if c.strip()]
+
+        # Parse recommended tests from content — format: "TestName (Reason: ...) | ..."
+        tests_raw = extract("Recommended lab tests")
+        tests: List[Dict[str, str]] = []
+        if tests_raw:
+            for part in tests_raw.split(" | "):
+                part = part.strip()
+                m = re.match(r"^(.+?)\s*\(Reason:\s*(.+?)\)$", part)
+                if m:
+                    tests.append({
+                        "test_name": m.group(1).strip(),
+                        "reason":    m.group(2).strip(),
+                    })
+                elif part:
+                    tests.append({"test_name": part, "reason": ""})
+
+        return cls(
+            id=meta.get("id", ""),
+            patient_input=extract("Patient complaint") or content[:120],
+            possible_conditions=conditions,
+            recommended_tests=tests,
+            severity=meta.get("severity", ""),
+            specialist_referral=meta.get("specialist", ""),
+            relevance_score=score,
+        )
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # TOOL INPUT/OUTPUT SCHEMAS  (CrewAI tool contracts)
 # ─────────────────────────────────────────────────────────────────────────────
@@ -360,17 +464,24 @@ class FirstAidToolOutput(BaseModel):
 
 
 class LabToolInput(BaseModel):
-    """Input schema for LabTool."""
-    symptoms: str = Field(..., min_length=3)
-    suspected_condition: Optional[str] = Field(default=None)
-    top_k: int = Field(default=5, ge=1, le=10)
+    """Input schema for LabTool — now backed by real lab test RAG data."""
+    symptoms: str = Field(
+        ...,
+        min_length=3,
+        description="User-described symptoms e.g. 'fever and body pain for 2 days'"
+    )
+    severity: Optional[str] = Field(
+        default=None,
+        description="Filter by severity: 'low', 'medium', 'high', 'critical'"
+    )
+    top_k: int = Field(default=3, ge=1, le=10)
 
 
 class LabToolOutput(BaseModel):
-    """Output schema for LabTool — lab suggestions from medicine conditions_treated context."""
+    """Output schema for LabTool — validated results from lab_test RAG collection."""
     query: str
     total_results: int
-    suggested_tests: List[Dict[str, str]]
+    lab_results: List[RetrievedLabTest]
     disclaimer: str = Field(
         default="Lab tests must be ordered by a licensed physician after clinical examination."
     )
