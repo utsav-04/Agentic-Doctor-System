@@ -361,3 +361,35 @@ class FirstAidRetriever(HybridRetriever):
         if severity:
             filters["severity_level"] = severity
         return self.retrieve(query=condition, filters=filters, top_k=top_k)
+
+
+
+class LabTestRetriever(HybridRetriever):
+    def __init__(self):
+        super().__init__(VectorStoreConfig.COLLECTION_LAB_TESTS)
+
+    @traceable(name="lab_test_retriever", run_type="retriever")
+    def get_lab_tests(
+        self,
+        symptoms: str,
+        severity: Optional[str] = None,
+        top_k: int = 3,
+    ) -> Dict[str, Any]:
+        """
+        Retrieves lab test recommendations matching the user's symptom description.
+
+        Args:
+            symptoms: User's symptoms in plain language
+            severity: Optional filter — 'low', 'medium', 'high', 'critical'
+            top_k:    Number of results to return
+
+        LangSmith traces:
+            - query sent to retriever
+            - severity filter applied
+            - dense + BM25 + RRF + MMR stages
+            - final documents with test names and reasons
+        """
+        filters: Dict[str, Any] = {"data_type": "lab_test"}
+        if severity:
+            filters["severity"] = severity
+        return self.retrieve(query=symptoms, filters=filters, top_k=top_k)

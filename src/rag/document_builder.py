@@ -1,15 +1,17 @@
 """
-document_builder.py
-====================
+src/rag/document_builder.py
+============================
 Converts raw JSON data files into LangChain Document objects.
 
 Strategy per collection:
-  - page_content  → dense natural-language text that gets embedded (what Gemini reads)
-  - metadata      → structured fields used for hard filters BEFORE vector search
+  page_content → natural-language text that gets embedded (Gemini reads this)
+  metadata     → structured fields used for hard filters BEFORE vector search
 
-The metadata filter approach means:
-  state="Maharashtra" + department="Cardiology" narrows the search space BEFORE
-  any embedding comparison happens — preventing cross-state hallucination entirely.
+Collections:
+  MedicineDocumentBuilder   → medicine_data_full_v3.json
+  DoctorDocumentBuilder     → doctors_full.json
+  FirstAidDocumentBuilder   → first_aid_data_v2.json
+  LabTestDocumentBuilder    → lab_test_data.json
 """
 
 import json
@@ -18,65 +20,63 @@ from typing import List, Dict, Any
 
 from langchain_core.documents import Document
 
+import sys
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from config import DataPaths
 
+
+# ─────────────────────────────────────────────────────────────────────────────
+# MEDICINE
+# ─────────────────────────────────────────────────────────────────────────────
 
 class MedicineDocumentBuilder:
     """
     Converts medicine_data_full_v3.json into Documents.
-
-    page_content is written as a clinical narrative so the embedding model
-    captures semantic meaning (symptoms ↔ medicine relationship).
-    Metadata holds filterable scalar fields.
+    page_content is a clinical narrative so Gemini captures
+    the semantic relationship between symptoms and medicine.
     """
 
     def build(self) -> List[Document]:
         data = self._load(DataPaths.MEDICINE_JSON)
         docs = []
         for item in data:
-            content = self._build_content(item)
-            metadata = self._build_metadata(item)
-            docs.append(Document(page_content=content, metadata=metadata))
+            docs.append(Document(
+                page_content=self._build_content(item),
+                metadata=self._build_metadata(item),
+            ))
         print(f"[MedicineBuilder] Built {len(docs)} documents")
         return docs
 
     def _build_content(self, item: Dict[str, Any]) -> str:
-        symptoms = ", ".join(item.get("symptoms_treated", []))
-        tags = ", ".join(item.get("tags", []))
-        warnings = " | ".join(item.get("warnings", []))
+        symptoms    = ", ".join(item.get("symptoms_treated", []))
+        tags        = ", ".join(item.get("tags", []))
+        warnings    = " | ".join(item.get("warnings", []))
         side_effects = ", ".join(item.get("side_effects", []))
+        dosage      = item.get("dosage_guidelines", {})
+        form        = item.get("form", "")
 
-        dosage = item.get("dosage_guidelines", {})
-        adult_dose = dosage.get("adults", "")
-        child_dose = dosage.get("children", "")
-        duration = dosage.get("duration", "")
-
-        form = item.get("form", "")
-        form_text = f"Form: {form}. " if form else ""
-
-        content = (
+        return (
             f"Medicine: {item['name']}. "
             f"Used for disease: {item['disease']}. "
-            f"{form_text}"
+            f"{'Form: ' + form + '. ' if form else ''}"
             f"This medicine treats the following symptoms: {symptoms}. "
-            f"Adult dosage: {adult_dose}. "
-            f"Children dosage: {child_dose}. "
-            f"Treatment duration: {duration}. "
+            f"Adult dosage: {dosage.get('adults', '')}. "
+            f"Children dosage: {dosage.get('children', '')}. "
+            f"Treatment duration: {dosage.get('duration', '')}. "
             f"Common side effects include: {side_effects}. "
             f"Important warnings: {warnings}. "
             f"Category tags: {tags}."
-        )
-        return content.strip()
+        ).strip()
 
     def _build_metadata(self, item: Dict[str, Any]) -> Dict[str, Any]:
         return {
-            "id":          item.get("id", ""),
-            "name":        item.get("name", ""),
-            "disease":     item.get("disease", ""),
-            "form":        item.get("form", "tablet"),
-            "source":      "medicine_db",
-            "data_type":   "medicine",
-            "tags":        "|".join(item.get("tags", [])),
+            "id":        item.get("id", ""),
+            "name":      item.get("name", ""),
+            "disease":   item.get("disease", ""),
+            "form":      item.get("form", "tablet"),
+            "source":    "medicine_db",
+            "data_type": "medicine",
+            "tags":      "|".join(item.get("tags", [])),
         }
 
     def _load(self, path: str) -> List[Dict]:
@@ -84,34 +84,35 @@ class MedicineDocumentBuilder:
             return json.load(f)
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# DOCTOR
+# ─────────────────────────────────────────────────────────────────────────────
+
 class DoctorDocumentBuilder:
     """
     Converts doctors_full.json into Documents.
-
-    Critical metadata fields:
-      - state, city         → geographic hard filter  (no cross-state leakage)
-      - department          → specialty hard filter
-      - accepts_emergency   → urgency filter
-      - is_available_online → mode filter
+    Critical: state and city go into metadata as hard filters.
+    No cross-state leakage is possible at the Chroma level.
     """
 
     def build(self) -> List[Document]:
         data = self._load(DataPaths.DOCTORS_JSON)
         docs = []
         for item in data:
-            content = self._build_content(item)
-            metadata = self._build_metadata(item)
-            docs.append(Document(page_content=content, metadata=metadata))
+            docs.append(Document(
+                page_content=self._build_content(item),
+                metadata=self._build_metadata(item),
+            ))
         print(f"[DoctorBuilder] Built {len(docs)} documents")
         return docs
 
     def _build_content(self, item: Dict[str, Any]) -> str:
         conditions = ", ".join(item.get("conditions_treated", []))
-        languages = ", ".join(item.get("languages_spoken", []))
-        days = ", ".join(item.get("available_days", []))
-        modes = ", ".join(item.get("appointment_mode", []))
+        languages  = ", ".join(item.get("languages_spoken", []))
+        days       = ", ".join(item.get("available_days", []))
+        modes      = ", ".join(item.get("appointment_mode", []))
 
-        content = (
+        return (
             f"Doctor: {item['name']}. "
             f"Department: {item['department']}. "
             f"Qualification: {item['qualification']}. "
@@ -129,8 +130,7 @@ class DoctorDocumentBuilder:
             f"Accepts emergency: {item.get('accepts_emergency', False)}. "
             f"Online consultation available: {item.get('is_available_online', False)}. "
             f"Online platform: {item.get('online_platform', '')}."
-        )
-        return content.strip()
+        ).strip()
 
     def _build_metadata(self, item: Dict[str, Any]) -> Dict[str, Any]:
         return {
@@ -152,32 +152,36 @@ class DoctorDocumentBuilder:
             return json.load(f)
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# FIRST AID
+# ─────────────────────────────────────────────────────────────────────────────
+
 class FirstAidDocumentBuilder:
     """
     Converts first_aid_data_v2.json into Documents.
-
-    page_content is deliberately written as instructions — imperative sentences —
-    so the model retrieves the most actionable text for urgent queries.
+    page_content is written as imperative instructions so the model
+    retrieves actionable text for urgent queries.
     """
 
     def build(self) -> List[Document]:
         data = self._load(DataPaths.FIRST_AID_JSON)
         docs = []
         for item in data:
-            content = self._build_content(item)
-            metadata = self._build_metadata(item)
-            docs.append(Document(page_content=content, metadata=metadata))
+            docs.append(Document(
+                page_content=self._build_content(item),
+                metadata=self._build_metadata(item),
+            ))
         print(f"[FirstAidBuilder] Built {len(docs)} documents")
         return docs
 
     def _build_content(self, item: Dict[str, Any]) -> str:
-        steps = " | ".join(item.get("immediate_steps", []))
-        remedies = " | ".join(item.get("home_remedies", []))
-        do_not = " | ".join(item.get("do_not_do", []))
+        steps     = " | ".join(item.get("immediate_steps", []))
+        remedies  = " | ".join(item.get("home_remedies", []))
+        do_not    = " | ".join(item.get("do_not_do", []))
         go_to_doc = " | ".join(item.get("go_to_doctor_if", []))
-        tags = ", ".join(item.get("tags", []))
+        tags      = ", ".join(item.get("tags", []))
 
-        content = (
+        return (
             f"First Aid: {item['name']}. "
             f"Condition: {item['condition']}. "
             f"Category: {item.get('category', '')}. "
@@ -188,8 +192,7 @@ class FirstAidDocumentBuilder:
             f"What NOT to do: {do_not}. "
             f"Go to doctor immediately if: {go_to_doc}. "
             f"Tags: {tags}."
-        )
-        return content.strip()
+        ).strip()
 
     def _build_metadata(self, item: Dict[str, Any]) -> Dict[str, Any]:
         return {
@@ -206,24 +209,42 @@ class FirstAidDocumentBuilder:
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
 
+
+# ─────────────────────────────────────────────────────────────────────────────
+# LAB TEST  (replaces PatientDocumentBuilder)
+# ─────────────────────────────────────────────────────────────────────────────
+
 class LabTestDocumentBuilder:
     """
-    Converts lab test JSON into Documents.
+    Converts lab_test_data.json into Documents.
 
     page_content = patient scenario + recommended tests + reasoning
-    metadata     = filterable fields (severity, condition, etc.)
+                   written so the embedding captures symptom → test relationships.
+
+    metadata     = severity, specialist — used as hard pre-filters.
+
+    Example input record:
+    {
+      "id": "MED-001",
+      "patient_input": "fever from 2 days, body pain...",
+      "recommended_tests": [
+        {"test_name": "CBC", "reason": "check infection"},
+        ...
+      ],
+      "possible_conditions": ["Viral Fever", "Dengue"],
+      "severity": "medium",
+      "specialist_referral": "General Physician"
+    }
     """
 
     def build(self) -> List[Document]:
         data = self._load(DataPaths.LABTEST_JSON)
         docs = []
-
         for item in data:
-            content = self._build_content(item)
-            metadata = self._build_metadata(item)
-
-            docs.append(Document(page_content=content, metadata=metadata))
-
+            docs.append(Document(
+                page_content=self._build_content(item),
+                metadata=self._build_metadata(item),
+            ))
         print(f"[LabTestBuilder] Built {len(docs)} documents")
         return docs
 
@@ -234,30 +255,25 @@ class LabTestDocumentBuilder:
             for t in tests
         ]
         tests_text = " | ".join(test_lines)
-
         conditions = ", ".join(item.get("possible_conditions", []))
 
-        content = (
+        return (
             f"Patient complaint: {item.get('patient_input', '')}. "
             f"Possible conditions: {conditions}. "
             f"Recommended lab tests: {tests_text}. "
             f"Severity level: {item.get('severity', '')}. "
             f"Suggested specialist: {item.get('specialist_referral', '')}."
-        )
-
-        return content.strip()
+        ).strip()
 
     def _build_metadata(self, item: Dict[str, Any]) -> Dict[str, Any]:
         return {
-            "id": item.get("id", ""),
-            "severity": item.get("severity", ""),
+            "id":         item.get("id", ""),
+            "severity":   item.get("severity", ""),
             "specialist": item.get("specialist_referral", ""),
-            "data_type": "lab_test",
-            "source": "lab_test_db",
+            "data_type":  "lab_test",
+            "source":     "lab_test_db",
         }
 
     def _load(self, path: str) -> List[Dict]:
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
-
-
