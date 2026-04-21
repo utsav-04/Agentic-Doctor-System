@@ -1,3 +1,5 @@
 myenv/
 .env
 __pycache__/
+src/vectorstores/
+logs/
