@@ -30,14 +30,16 @@ from rank_bm25 import BM25Okapi
 
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from config import (
+from src.rag.config import (
     EmbeddingConfig,
     VectorStoreConfig,
     RetrievalConfig,
     GOOGLE_API_KEY,
 )
+from src.logger import get_logger
+
+logger = get_logger(__name__)
 
 
 def _build_embeddings(task_type: str) -> GoogleGenerativeAIEmbeddings:
@@ -74,9 +76,7 @@ class HybridRetriever:
             embedding_function=self._embeddings,
             persist_directory=persist_path,
             collection_metadata={
-                "hnsw:space":           VectorStoreConfig.HNSW_SPACE,
-                "hnsw:M":               VectorStoreConfig.HNSW_M,
-                "hnsw:ef_construction": VectorStoreConfig.HNSW_EF_CONSTRUCTION,
+                "hnsw:space": VectorStoreConfig.HNSW_SPACE,
             },
         )
 
@@ -89,40 +89,50 @@ class HybridRetriever:
     ) -> Dict[str, Any]:
         """
         Main retrieval entry point — fully traced in LangSmith.
-
-        LangSmith will show:
-          - query text
-          - filters applied
-          - dense results count
-          - BM25 results count
-          - final documents with their full page_content and metadata
-
-        Returns dict (not just docs) so LangSmith captures rich metadata.
         """
         t_start = time.time()
         chroma_filter = _build_chroma_filter(filters)
 
-        # Stage 1: Dense retrieval
-        dense_result = self._dense_retrieve(query, chroma_filter)
-        dense_docs = dense_result["documents"]
+        logger.debug(
+            "[%s] Retrieving — query: '%s' | filters: %s | top_k: %d",
+            self.collection_name, query[:60], filters, top_k
+        )
 
-        # Stage 2: Candidate pool for BM25
-        pool_result = self._get_candidate_pool(query, chroma_filter)
+        dense_result  = self._dense_retrieve(query, chroma_filter)
+        dense_docs    = dense_result["documents"]
+
+        pool_result   = self._get_candidate_pool(query, chroma_filter)
         candidate_docs = pool_result["documents"]
 
-        # Stage 3: BM25 sparse retrieval
-        bm25_result = self._bm25_retrieve(query, candidate_docs)
-        bm25_docs = bm25_result["documents"]
+        bm25_result   = self._bm25_retrieve(query, candidate_docs)
+        bm25_docs     = bm25_result["documents"]
 
-        # Stage 4: RRF merge
-        fused_result = self._reciprocal_rank_fusion(dense_docs, bm25_docs)
-        fused_docs = fused_result["documents"]
+        fused_result  = self._reciprocal_rank_fusion(dense_docs, bm25_docs)
+        fused_docs    = fused_result["documents"]
 
-        # Stage 5: MMR rerank
-        mmr_result = self._mmr_rerank(query, fused_docs, top_k)
-        final_docs = mmr_result["documents"]
+        mmr_result    = self._mmr_rerank(query, fused_docs, top_k)
+        final_docs    = mmr_result["documents"]
 
         elapsed = round(time.time() - t_start, 3)
+
+        logger.info(
+            "[%s] Retrieved %d docs | dense: %d | bm25: %d | fused: %d | final: %d | %.3fs",
+            self.collection_name,
+            len(final_docs),
+            dense_result["count"],
+            bm25_result["count"],
+            fused_result["count"],
+            len(final_docs),
+            elapsed,
+        )
+
+        for i, doc in enumerate(final_docs):
+            logger.debug(
+                "  Result %d: id=%s | name=%s",
+                i + 1,
+                doc.metadata.get("id", "?"),
+                doc.metadata.get("name", doc.metadata.get("condition", "?")),
+            )
 
         return {
             "query": query,
@@ -361,7 +371,6 @@ class FirstAidRetriever(HybridRetriever):
         if severity:
             filters["severity_level"] = severity
         return self.retrieve(query=condition, filters=filters, top_k=top_k)
-
 
 
 class LabTestRetriever(HybridRetriever):

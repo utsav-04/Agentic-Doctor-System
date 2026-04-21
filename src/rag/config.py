@@ -12,7 +12,7 @@ load_dotenv()
 BASE_DIR = Path(__file__).parent.parent
 
 class EmbeddingConfig:
-    MODEL_NAME       = "models/embedding-001"
+    MODEL_NAME       = "gemini-embedding-001"
     TASK_TYPE_DOC    = "retrieval_document"
     TASK_TYPE_QUERY  = "retrieval_query"
     BATCH_SIZE       = 50
@@ -29,8 +29,6 @@ class VectorStoreConfig:
 
     DISTANCE_METRIC        = "cosine"
     HNSW_SPACE             = "cosine"
-    HNSW_EF_CONSTRUCTION   = 200
-    HNSW_M                 = 32
 
 class RetrievalConfig:
     TOP_K_DENSE            = 10
@@ -56,4 +54,11 @@ class DataPaths:
     FIRST_AID_JSON   = str(BASE_DIR / "data" / "first_aid_data.json")
     LABTEST_JSON     = str(BASE_DIR / "data" / "lab_test_data.json")
 
+class LLMConfig:
+    MODEL_NAME      = "gemini-2.5-flash"
+    TEMPERATURE     = 0.1
+    MAX_TOKENS      = 2048
+
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
+LANGCHAIN_API_KEY   = os.getenv("LANGCHAIN_API_KEY", "")
+LANGCHAIN_PROJECT   = os.getenv("LANGCHAIN_PROJECT", "agentic-doctor-system")

@@ -53,10 +53,12 @@ from typing import List, Dict, Any
 from langsmith import traceable, Client as LangSmithClient
 from langchain_core.documents import Document
 
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
-from config import DataPaths, VectorStoreConfig, LANGCHAIN_API_KEY, LANGCHAIN_PROJECT
+from src.rag.config import DataPaths, VectorStoreConfig, LANGCHAIN_API_KEY, LANGCHAIN_PROJECT
+from src.logger import get_logger
+
+logger = get_logger(__name__)
 from src.schema.schemas import (
-    MedicineRecord, DoctorRecord, FirstAidRecord,LabTestRecord,
+    MedicineRecord, DoctorRecord, FirstAidRecord, LabTestRecord,
     validate_json_records,
 )
 from src.rag.document_builder import (
@@ -115,6 +117,7 @@ def validate_data(
     Traced in LangSmith: shows exactly how many records passed/failed.
     """
     if schema_cls is None:
+        logger.info("[%s] Validation skipped (no schema defined)", collection_key)
         return {
             "collection": collection_key,
             "total": len(raw_data),
@@ -124,9 +127,22 @@ def validate_data(
             "skipped_validation": True,
         }
 
+    logger.info("[%s] Validating %d records with Pydantic...", collection_key, len(raw_data))
     valid_records, error_log = validate_json_records(raw_data, schema_cls, collection_key)
 
-    result = {
+    if error_log:
+        logger.warning(
+            "[%s] %d/%d records failed validation",
+            collection_key, len(error_log), len(raw_data)
+        )
+        for err in error_log[:5]:
+            logger.warning("  Record %s: %s", err["id"], err["error"][:100])
+        if len(error_log) > 5:
+            logger.warning("  ... and %d more errors", len(error_log) - 5)
+    else:
+        logger.info("[%s] All %d records passed validation", collection_key, len(valid_records))
+
+    return {
         "collection": collection_key,
         "total": len(raw_data),
         "valid": len(valid_records),
@@ -134,15 +150,6 @@ def validate_data(
         "error_log": error_log[:10],
         "skipped_validation": False,
     }
-
-    if error_log:
-        print(f"\n  [WARN] {len(error_log)} validation errors in {collection_key}:")
-        for err in error_log[:5]:
-            print(f"    Record {err['id']}: {err['error'][:100]}")
-        if len(error_log) > 5:
-            print(f"    ... and {len(error_log) - 5} more")
-
-    return result
 
 
 @traceable(name="build_documents", run_type="tool")
@@ -154,11 +161,17 @@ def build_documents(
     Builds LangChain Documents from raw JSON.
     Traced: shows doc count, sample content length, metadata keys.
     """
+    logger.info("[%s] Building LangChain documents...", collection_key)
     builder = builder_cls()
     documents = builder.build()
 
     sample_meta_keys = list(documents[0].metadata.keys()) if documents else []
     sample_content_length = len(documents[0].page_content) if documents else 0
+
+    logger.info(
+        "[%s] Built %d documents | metadata keys: %s | ~%d chars/doc",
+        collection_key, len(documents), sample_meta_keys, sample_content_length
+    )
 
     return {
         "collection": collection_key,
@@ -180,6 +193,10 @@ def embed_and_store(
     Embeds documents and persists to ChromaDB.
     Traced: shows batch count, embedding duration, final vector count.
     """
+    logger.info(
+        "Embedding %d documents into collection: %s (force_rebuild=%s)",
+        len(documents), collection_name, force_rebuild
+    )
     start = time.time()
 
     vectorstore = manager.build_or_load(
@@ -190,6 +207,11 @@ def embed_and_store(
 
     elapsed = time.time() - start
     vector_count = vectorstore._collection.count()
+
+    logger.info(
+        "Collection '%s' ready — %d vectors | took %.1fs",
+        collection_name, vector_count, elapsed
+    )
 
     return {
         "collection_name": collection_name,
@@ -207,54 +229,49 @@ def run_pipeline(
     force_rebuild: bool = False,
     dry_run: bool = False,
 ) -> Dict[str, Any]:
-    """
-    Full pipeline for one collection.
-    This is the parent trace — validation, building, embedding are child traces.
-    In LangSmith you see the full tree: pipeline → validate → build → embed
-    """
     cfg = PIPELINE_CONFIG[collection_key]
-    print(f"\n{'─'*56}")
-    print(f"  Collection : {collection_key}")
-    print(f"  Description: {cfg['description']}")
-    print(f"{'─'*56}")
 
-    # Load raw data
+    logger.info("=" * 54)
+    logger.info("Pipeline: %s  →  %s", collection_key.upper(), cfg["collection"])
+    logger.info("Description: %s", cfg["description"])
+    logger.info("=" * 54)
+
     try:
         with open(cfg["data_path"], "r", encoding="utf-8") as f:
             raw_data = json.load(f)
     except FileNotFoundError:
-        print(f"  [SKIP] Data file not found: {cfg['data_path']}")
-        print(f"         Place your JSON file there and re-run.")
+        logger.error("Data file not found: %s", cfg["data_path"])
+        logger.error("Place your JSON file there and re-run.")
         return {"status": "skipped", "reason": "file_not_found"}
 
-    print(f"  Raw records loaded : {len(raw_data)}")
+    logger.info("Raw records loaded: %d from %s", len(raw_data), cfg["data_path"])
 
-    # Step 1: Validate
     validation_result = validate_data(raw_data, cfg["schema_cls"], collection_key)
-    print(f"  Valid records      : {validation_result['valid']}/{validation_result['total']}")
+    logger.info(
+        "Validation: %d/%d valid",
+        validation_result["valid"], validation_result["total"]
+    )
 
     if dry_run:
-        print(f"  [DRY RUN] Stopping here — no embedding performed.")
+        logger.info("[DRY RUN] Stopping here — no embedding performed.")
         return {"status": "dry_run", "validation": validation_result}
 
-    # Step 2: Build Documents
     doc_result = build_documents(cfg["builder_cls"], collection_key)
     documents = doc_result["documents"]
-    print(f"  Documents built    : {doc_result['document_count']}")
-    print(f"  Metadata keys      : {doc_result['sample_metadata_keys']}")
-    print(f"  Content length     : ~{doc_result['sample_content_chars']} chars/doc")
 
-    # Step 3: Embed + Store
-    print(f"  Embedding...       (this takes a few minutes for large collections)")
     embed_result = embed_and_store(
         documents=documents,
         collection_name=cfg["collection"],
         manager=manager,
         force_rebuild=force_rebuild,
     )
-    print(f"  Vectors stored     : {embed_result['vectors_stored']}")
-    print(f"  Embedding time     : {embed_result['embedding_duration_seconds']}s")
-    print(f"  Persisted to       : {embed_result['persist_path']}/")
+
+    logger.info(
+        "Pipeline '%s' complete — %d vectors in %.1fs",
+        collection_key,
+        embed_result["vectors_stored"],
+        embed_result["embedding_duration_seconds"],
+    )
 
     return {
         "status": "success",
@@ -286,17 +303,18 @@ Examples:
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
-    print("\n" + "="*56)
-    print("  Agentic Doctor System — RAG Ingestion Pipeline")
-    print("="*56)
-    print(f"  Embedding model   : models/embedding-001 (Gemini)")
-    print(f"  Vector DB         : ChromaDB + HNSW (cosine)")
-    print(f"  Retrieval stack   : BM25 + Dense → RRF → MMR")
-    print(f"  Validation        : Pydantic v2")
-    print(f"  Tracing           : LangSmith → {LANGCHAIN_PROJECT}")
-    print(f"  Force rebuild     : {args.force_rebuild}")
-    print(f"  Dry run           : {args.dry_run}")
-    print("="*56)
+    logger.info("=" * 54)
+    logger.info("Agentic Doctor System — RAG Ingestion Pipeline")
+    logger.info("=" * 54)
+    logger.info("Embedding model : models/embedding-001 (Gemini)")
+    logger.info("Vector DB       : ChromaDB + HNSW (cosine)")
+    logger.info("Retrieval stack : BM25 + Dense -> RRF -> MMR")
+    logger.info("Validation      : Pydantic v2")
+    logger.info("LangSmith       : %s", LANGCHAIN_PROJECT)
+    logger.info("Force rebuild   : %s", args.force_rebuild)
+    logger.info("Dry run         : %s", args.dry_run)
+    logger.info("Log file        : logs/agentic_doctor.log")
+    logger.info("=" * 54)
 
     manager = VectorStoreManager()
     collections = (
@@ -309,34 +327,43 @@ Examples:
     total_start = time.time()
 
     for key in collections:
-        results[key] = run_pipeline(
-            collection_key=key,
-            manager=manager,
-            force_rebuild=args.force_rebuild,
-            dry_run=args.dry_run,
-        )
+        try:
+            results[key] = run_pipeline(
+                collection_key=key,
+                manager=manager,
+                force_rebuild=args.force_rebuild,
+                dry_run=args.dry_run,
+            )
+        except FileNotFoundError as e:
+            logger.error("[%s] Data file not found: %s", key, e)
+            results[key] = {"status": "skipped"}
+        except Exception as e:
+            logger.error("[%s] Pipeline failed: %s", key, e, exc_info=True)
+            results[key] = {"status": "error"}
 
     total_elapsed = time.time() - total_start
 
-    print(f"\n{'='*56}")
-    print(f"  INGESTION COMPLETE — {total_elapsed:.1f}s total")
-    print(f"{'='*56}")
+    logger.info("=" * 54)
+    logger.info("ALL PIPELINES COMPLETE in %.1fs", total_elapsed)
+    logger.info("=" * 54)
     for key, result in results.items():
         status = result.get("status", "unknown")
         if status == "success":
             vecs = result["embedding"]["vectors_stored"]
-            print(f"  {key:<12} : {vecs} vectors  [OK]")
+            logger.info("  %-12s : %d vectors  [OK]", key, vecs)
         elif status == "skipped":
-            print(f"  {key:<12} : SKIPPED — file not found")
+            logger.warning("  %-12s : SKIPPED — file not found", key)
         elif status == "dry_run":
             valid = result["validation"]["valid"]
-            total = result["validation"]["total"]
-            print(f"  {key:<12} : {valid}/{total} records valid  [DRY RUN]")
+            total_v = result["validation"]["total"]
+            logger.info("  %-12s : %d/%d valid  [DRY RUN]", key, valid, total_v)
+        elif status == "error":
+            logger.error("  %-12s : FAILED — see log for details", key)
 
-    print(f"\n  Vector stores saved to: vector_stores/")
-    print(f"  LangSmith traces at  : https://smith.langchain.com")
-    print(f"\n  Next step: python -m src.tools.run_tools_test")
-    print()
+    logger.info("Vector stores : vector_stores/")
+    logger.info("LangSmith     : https://smith.langchain.com")
+    logger.info("Log file      : logs/agentic_doctor.log")
+    logger.info("Next step     : python -m src.tools.run_tools_test")
 
 
 if __name__ == "__main__":

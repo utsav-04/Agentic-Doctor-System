@@ -64,7 +64,7 @@ class DoctorRecord(BaseModel):
     """Validates one record from doctors_full.json"""
     id: str = Field(...)
     name: str = Field(..., min_length=4)
-    qualification: str = Field(..., min_length=4)
+    qualification: str = Field(..., min_length=2)
     experience_years: int = Field(..., ge=0, le=60)
     languages_spoken: List[str] = Field(..., min_length=1)
     department: str = Field(...)
