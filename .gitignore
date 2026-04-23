@@ -3,3 +3,7 @@ myenv/
 __pycache__/
 src/vectorstores/
 logs/
+*.sqlite3
+*.bin
+*.pickle
+*.json
