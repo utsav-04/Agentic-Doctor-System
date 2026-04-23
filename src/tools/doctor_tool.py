@@ -12,7 +12,7 @@ from langsmith import traceable
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from src.rag.retriever import DoctorRetriever
-from src.schemas import DoctorToolInput, RetrievedDoctor
+from src.schema.schemas import DoctorToolInput, RetrievedDoctor
 
 _retriever: Optional[DoctorRetriever] = None
 

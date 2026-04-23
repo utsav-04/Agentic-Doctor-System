@@ -18,7 +18,7 @@ def sep(title: str):
 def test_medicine():
     sep("TEST: medicine_finder")
     from src.tools.medicine_tool import medicine_finder
-    result = medicine_finder("fever and dry cough", patient_age=8, top_k=3)
+    result = medicine_finder.run("fever and dry cough", patient_age=8, top_k=3)
     print(result)
     assert len(result) > 50
     print("[PASS]")
@@ -27,7 +27,7 @@ def test_medicine():
 def test_doctor():
     sep("TEST: doctor_finder")
     from src.tools.doctor_tool import doctor_finder
-    result = doctor_finder(
+    result = doctor_finder.run(
         symptoms="chest pain",
         state="Maharashtra",
         city="Mumbai",
@@ -43,7 +43,7 @@ def test_doctor():
 def test_first_aid():
     sep("TEST: first_aid_guide")
     from src.tools.first_aid_tool import first_aid_guide
-    result = first_aid_guide("heart attack", severity="life_threatening", top_k=1)
+    result = first_aid_guide.run("heart attack", severity="life_threatening", top_k=1)
     print(result)
     assert len(result) > 50
     print("[PASS]")
@@ -52,7 +52,7 @@ def test_first_aid():
 def test_lab():
     sep("TEST: lab_test_suggester")
     from src.tools.lab_tool import lab_test_suggester
-    result = lab_test_suggester(
+    result = lab_test_suggester.run(
         symptoms="frequent urination and excessive thirst",
         suspected_condition="Diabetes",
         top_k=5,
