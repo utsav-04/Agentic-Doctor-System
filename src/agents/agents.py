@@ -17,23 +17,27 @@ Agent responsibilities:
 import sys
 from pathlib import Path
 
-from crewai import Agent
-from langchain_google_genai import ChatGoogleGenerativeAI
+from crewai import LLM, Agent
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from src.rag.config import GOOGLE_API_KEY, LLMConfig
+from src.rag.config import GOOGLE_API_KEY, LLMConfig,HF_TOKEN
 from src.tools.medicine_tool import medicine_finder
 from src.tools.doctor_tool import doctor_finder
 from src.tools.first_aid_tool import first_aid_guide
 from src.tools.lab_tool import lab_test_suggester
+from src.logger import get_logger
 
+logger = get_logger(__name__)
 
-llm = ChatGoogleGenerativeAI(
-    model=LLMConfig.MODEL_NAME,
-    google_api_key=GOOGLE_API_KEY,
-    temperature=LLMConfig.TEMPERATURE,
+# DeepSeek-R1 via HuggingFace — used for all agent text generation.
+# Gemini embeddings are unchanged (used only in RAG retrieval).
+llm = LLM(
+    model="ollama/llama3",
+    base_url="http://localhost:11434",
+    temperature=LLMConfig.temperature
 )
+logger.info("Agents initialised with LLM: %s", llm.model)
 
 
 intake_agent = Agent(

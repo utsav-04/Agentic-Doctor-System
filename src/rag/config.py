@@ -55,10 +55,14 @@ class DataPaths:
     LABTEST_JSON     = str(BASE_DIR / "data" / "lab_test_data.json")
 
 class LLMConfig:
-    MODEL_NAME      = "gemini-2.5-flash"
-    TEMPERATURE     = 0.1
-    MAX_TOKENS      = 2048
+    #MODEL_NAME      = "huggingface/deepseek-ai/DeepSeek-R1"
+    MODEL_NAME = "ollama/llama3",
+    base_url="http://localhost:11434",
+    temperature=0.1
+    
+
 
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
 LANGCHAIN_API_KEY   = os.getenv("LANGCHAIN_API_KEY", "")
 LANGCHAIN_PROJECT   = os.getenv("LANGCHAIN_PROJECT", "agentic-doctor-system")
+HF_TOKEN            = os.getenv("HF_TOKEN", "") 
