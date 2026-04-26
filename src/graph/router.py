@@ -10,14 +10,19 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from src.rag.config import GOOGLE_API_KEY, LLMConfig
-from langchain_google_genai import ChatGoogleGenerativeAI
+#from src.llm import build_llm
+from src.rag.config import GOOGLE_API_KEY, LLMConfig,HF_TOKEN
+from src.logger import get_logger
+from crewai import LLM
+logger = get_logger(__name__)
 
-llm = ChatGoogleGenerativeAI(
-    model=LLMConfig.MODEL_NAME,
-    google_api_key=GOOGLE_API_KEY,
-    temperature=0.1,
+# temperature=0.0 for router — deterministic classification outputs
+llm = LLM(
+    model="ollama/llama3",
+    base_url="http://localhost:11434",
+    temperature=LLMConfig.temperature
 )
+logger.info("Router LLM ready: %s", llm.model)
 
 
 def detect_criticality(symptoms: str) -> str:
@@ -25,6 +30,7 @@ def detect_criticality(symptoms: str) -> str:
     Classifies symptoms as critical / moderate / mild.
     Returns one of: 'critical' | 'moderate' | 'mild'
     """
+    logger.info("Detecting criticality for symptoms: '%s'", symptoms[:80])
     prompt = f"""
 You are a medical triage assistant in an Indian healthcare chatbot.
 
@@ -47,11 +53,14 @@ Patient symptoms:
 
 Return ONLY one word: critical, moderate, or mild.
 """
-    response = llm.invoke(prompt)
-    result   = response.content.strip().lower()
+    response = llm.call(prompt)
+    result   = response.strip().lower()
 
     if result not in ("critical", "moderate", "mild"):
-        return "mild"
+        logger.warning("Unexpected criticality value '%s' — defaulting to 'mild'", result)
+        result = "mild"
+
+    logger.info("Criticality result: %s", result.upper())
     return result
 
 
@@ -83,8 +92,13 @@ doctor
 first_aid
 general
 """
-    response = llm.invoke(prompt)
-    result   = response.content.strip().lower()
+    response = llm.call(prompt)
+    result   = response.strip().lower()
 
     valid = {"medicine", "lab", "both", "doctor", "first_aid", "general"}
-    return result if result in valid else "general"
+    if result not in valid:
+        logger.warning("Unexpected intent '%s' — defaulting to 'general'", result)
+        result = "general"
+
+    logger.info("Intent result: %s", result)
+    return result
