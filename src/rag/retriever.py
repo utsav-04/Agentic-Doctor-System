@@ -346,14 +346,19 @@ class DoctorRetriever(HybridRetriever):
         emergency_only: bool = False,
         top_k: int = 5,
     ) -> Dict[str, Any]:
-        filters: Dict[str, Any] = {"data_type": "doctor", "state": state}
+        filters = {"data_type": "doctor", "state": state}
         if city:
             filters["city"] = city
-        if department:
-            filters["department"] = department
-        if emergency_only:
-            filters["accepts_emergency"] = "True"
-        return self.retrieve(query=symptoms, filters=filters, top_k=top_k)
+
+        result = self.retrieve(query=symptoms, filters=filters, top_k=top_k)
+
+        if not result["documents"] and city:
+            result = self.retrieve(query=symptoms, filters={"data_type": "doctor", "state": state}, top_k=top_k)
+
+        if not result["documents"]:
+            result = self.retrieve(query=symptoms, filters={"data_type": "doctor"}, top_k=top_k)
+
+        return result
 
 
 class FirstAidRetriever(HybridRetriever):
@@ -367,10 +372,14 @@ class FirstAidRetriever(HybridRetriever):
         severity: Optional[str] = None,
         top_k: int = 3,
     ) -> Dict[str, Any]:
-        filters: Dict[str, Any] = {"data_type": "first_aid"}
+        filters = {"data_type": "first_aid"}
         if severity:
             filters["severity_level"] = severity
-        return self.retrieve(query=condition, filters=filters, top_k=top_k)
+
+        result = self.retrieve(query=condition, filters=filters, top_k=top_k)
+        if not result["documents"]:
+            result = self.retrieve(query=condition, filters={"data_type": "first_aid"}, top_k=top_k)
+        return result
 
 
 class LabTestRetriever(HybridRetriever):
@@ -378,12 +387,7 @@ class LabTestRetriever(HybridRetriever):
         super().__init__(VectorStoreConfig.COLLECTION_LAB_TESTS)
 
     @traceable(name="lab_test_retriever", run_type="retriever")
-    def get_lab_tests(
-        self,
-        symptoms: str,
-        severity: Optional[str] = None,
-        top_k: int = 3,
-    ) -> Dict[str, Any]:
+    def get_lab_tests(self,symptoms: str,severity: Optional[str] = None,top_k: int = 3,) -> Dict[str, Any]:
         """
         Retrieves lab test recommendations matching the user's symptom description.
 
