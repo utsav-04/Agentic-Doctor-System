@@ -1,17 +1,17 @@
 """
 src/agents/agents.py
 =====================
-All CrewAI agents for the Agentic Doctor System.
+CrewAI agents. Only intake_agent and criticality_agent are used now —
+medicine_agent / doctor_agent / lab_agent are kept here for reference /
+possible future use, but executor_node calls the tools directly and no
+longer routes through a Crew for them.
 
-Each agent follows the same pattern as the reference:
-    Agent(role, goal, backstory, tools, llm, verbose)
-
-Agent responsibilities:
-  intake_agent       — collects user name, age, symptoms, basic history
-  criticality_agent  — triages severity: critical / moderate / mild
-  medicine_agent     — recommends medicines using RAG
-  doctor_agent       — finds nearby doctors using RAG
-  lab_agent          — suggests lab tests using RAG
+CHANGE FROM ORIGINAL: criticality_agent's tools=[first_aid_guide] binding
+was removed. It caused a duplicate first_aid retrieval — once inside
+criticality_node's Crew (the agent decided to call the tool itself for
+"CRITICAL" messaging), and once again in executor_node's plan execution.
+criticality_agent only needs to write a short triage message now; the
+actual first_aid tool call belongs solely to executor_node.
 """
 
 import sys
@@ -21,7 +21,7 @@ from crewai import LLM, Agent
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from src.rag.config import GOOGLE_API_KEY, LLMConfig,HF_TOKEN
+from src.rag.config import GOOGLE_API_KEY, LLMConfig, HF_TOKEN
 from src.tools.medicine_tool import medicine_finder
 from src.tools.doctor_tool import doctor_finder
 from src.tools.first_aid_tool import first_aid_guide
@@ -30,8 +30,6 @@ from src.logger import get_logger
 
 logger = get_logger(__name__)
 
-# DeepSeek-R1 via HuggingFace — used for all agent text generation.
-# Gemini embeddings are unchanged (used only in RAG retrieval).
 llm = LLM(
     model="ollama/llama3",
     base_url="http://localhost:11434",
@@ -62,10 +60,9 @@ intake_agent = Agent(
 criticality_agent = Agent(
     role="Medical Triage Specialist",
     goal=(
-        "Assess the severity of the user's condition based on their reported symptoms "
-        "and classify it as CRITICAL, MODERATE, or MILD. "
-        "Always use the first_aid_guide tool for critical or life-threatening symptoms "
-        "to provide immediate help while directing the user to a doctor."
+        "Write a short, clear, empathetic triage message based on the severity "
+        "level already assessed for the user's symptoms (CRITICAL, MODERATE, "
+        "or MILD). Text only — do not call any tool."
     ),
     backstory=(
         "You are an experienced emergency medicine triage nurse with 15 years of "
@@ -75,11 +72,17 @@ criticality_agent = Agent(
         "You know that in India, delayed emergency care can be life-threatening, "
         "so you act fast and clearly when severity is high."
     ),
-    tools=[first_aid_guide],
+    tools=[],
     llm=llm,
     verbose=True,
 )
 
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Kept for reference — no longer used by the graph. executor_node calls
+# medicine_finder / doctor_finder / lab_test_suggester directly instead of
+# routing through a single-tool CrewAI agent for each.
+# ─────────────────────────────────────────────────────────────────────────────
 
 medicine_agent = Agent(
     role="Clinical Pharmacist and Medicine Advisor",
