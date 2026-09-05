@@ -42,6 +42,11 @@ class AgentState(TypedDict, total=False):
     follow_up_offered: List[str]    # e.g. ["lab", "doctor"] — set by synthesis_node when
                                      # it asked "want lab/doctor too?"; the caller (test.py /
                                      # API layer) reads this to know what a yes/no answers
+    delivered_tools:  List[str]     # tool names whose output has already been shown to the
+                                     # user (set by synthesis_node each turn). On a follow-up
+                                     # resume, only tools NOT in this list get rendered —
+                                     # otherwise every follow-up re-shows everything already
+                                     # sent in an earlier chat message.
 
     # ── HITL (unused for now — kept as optional hook for later) ──
     hitl_approved:   Optional[bool]

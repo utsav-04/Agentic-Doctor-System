@@ -1,21 +1,24 @@
 """
 src/graph/graphs.py
 ====================
-ONE graph, ONE invoke() per user turn. Replaces the old 3-graph split
-(build_intake_graph / build_action_graph / build_doctor_graph) that required
-input() between graphs.
+ONE graph, ONE invoke() per user turn.
 
-    welcome -> intake -> [forced_tool?]
-                            |-- yes --> planner (bypass) --------------------\
-                            |-- no  --> criticality -> [plan already set?]    \
-                                            |-- yes (critical) --> executor ---+--> [need location?]
-                                            |-- no             --> planner ---/         |-- yes --> END (pause)
-                                                                                          |-- no  --> synthesis --> END
+    welcome -> intake -> cache_check -> [cache hit?]
+                                           |-- yes --> END (instant return)
+                                           |-- no  --> [forced_tool or resumed plan?]
+                                                          |-- yes --> planner (bypass/resume)
+                                                          |-- no  --> criticality -> [plan already set?]
+                                                                          |-- yes (critical) --> executor
+                                                                          |-- no             --> planner
+                                          planner --> executor --> [need location?]
+                                                                       |-- yes --> END (pause)
+                                                                       |-- no  --> synthesis --> END
 
-Two legitimate reasons a single invoke() can end without a final_response:
-  1. forced_tool='doctor' (or plan includes 'doctor') but no user_state yet
-     -> stage == 'doctor_need_location'. Caller re-invokes with user_state/
-        user_city set and the same plan/tool_outputs carried forward.
+Two legitimate reasons a single invoke() can end without going through
+synthesis: a full-response cache hit (stage == 'cache_hit'), or the doctor
+tool pausing for location (stage == 'doctor_need_location'). Both are
+handled by the caller (test.py / API layer) — a cache hit needs no further
+action, a location pause needs a re-invoke with user_state/user_city set.
 """
 
 from langgraph.graph import StateGraph, END
@@ -24,6 +27,7 @@ from src.graph.state import AgentState
 from src.graph.nodes import (
     welcome_node,
     intake_node,
+    cache_check_node,
     criticality_node,
     planner_node,
     executor_node,
@@ -31,10 +35,12 @@ from src.graph.nodes import (
 )
 
 
-def _route_after_intake(state: AgentState) -> str:
-    """Skip criticality when: a UI button was pressed (forced_tool), or this
-    is a resumed turn after a doctor_need_location pause (plan already set —
-    planner_node will just pass it through, no re-planning)."""
+def _route_after_cache_check(state: AgentState) -> str:
+    """Cache hit -> we're done, no need to touch criticality/planner/executor/
+    synthesis at all. Otherwise fall through to the same forced_tool/resume
+    logic as before."""
+    if state.get("stage") == "cache_hit":
+        return "end"
     if state.get("forced_tool") or state.get("plan"):
         return "planner"
     return "criticality"
@@ -60,6 +66,7 @@ def build_graph():
 
     builder.add_node("welcome", welcome_node)
     builder.add_node("intake", intake_node)
+    builder.add_node("cache_check", cache_check_node)
     builder.add_node("criticality", criticality_node)
     builder.add_node("planner", planner_node)
     builder.add_node("executor", executor_node)
@@ -67,11 +74,12 @@ def build_graph():
 
     builder.set_entry_point("welcome")
     builder.add_edge("welcome", "intake")
+    builder.add_edge("intake", "cache_check")
 
     builder.add_conditional_edges(
-        "intake",
-        _route_after_intake,
-        {"planner": "planner", "criticality": "criticality"},
+        "cache_check",
+        _route_after_cache_check,
+        {"end": END, "planner": "planner", "criticality": "criticality"},
     )
 
     builder.add_conditional_edges(
