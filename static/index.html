@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic Doctor</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3v6M12 15v6M4.2 7.5l5.2 3M14.6 13.5l5.2 3M19.8 7.5l-5.2 3M9.4 13.5l-5.2 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </span>
+      <span class="brand-name">Agentic Doctor</span>
+    </div>
+
+    <button class="new-chat-btn" id="newChatBtn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      New chat
+    </button>
+
+    <div class="sidebar-section-label">Recent</div>
+    <div class="sidebar-empty" id="sidebarEmpty">No conversations yet</div>
+    <ul class="conversation-list" id="conversationList"></ul>
+
+    <div class="sidebar-footer">
+      <span class="disclaimer-pill">Not a substitute for a doctor</span>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <header class="topbar">
+      <button class="icon-btn" id="sidebarToggle" aria-label="Toggle sidebar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M9 4v16" stroke="currentColor" stroke-width="1.6"/></svg>
+      </button>
+      <span class="topbar-title">Agentic Doctor</span>
+      <span class="status-pill" id="statusPill">ready</span>
+    </header>
+
+    <section class="chat-scroll" id="chatScroll">
+
+      <div class="hero" id="hero">
+        <div class="hero-mark" aria-hidden="true">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M12 3v6M12 15v6M4.2 7.5l5.2 3M14.6 13.5l5.2 3M19.8 7.5l-5.2 3M9.4 13.5l-5.2 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h1>How are you feeling?</h1>
+        <p>Describe your symptoms, or ask about medicine, lab tests, or finding a doctor nearby.</p>
+
+        <div class="suggestion-row">
+          <button class="suggestion-chip" data-fill="Cold, cough and fever for the last 3 days">Cold, cough &amp; fever</button>
+          <button class="suggestion-chip" data-fill="What lab tests should I get for frequent urination and thirst?">Lab test guidance</button>
+          <button class="suggestion-chip" data-fill="Find me a doctor nearby">Find a doctor</button>
+        </div>
+      </div>
+
+      <div class="message-list" id="messageList"></div>
+
+    </section>
+
+    <footer class="composer">
+      <div class="mode-row" id="modeRow">
+        <button class="mode-pill active" data-tool="">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          Auto
+        </button>
+        <button class="mode-pill" data-tool="medicine">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="10.5" width="18" height="7" rx="3.5" transform="rotate(-45 12 14)" stroke="currentColor" stroke-width="1.6"/><path d="M9.5 12 L14.5 17" stroke="currentColor" stroke-width="1.6"/></svg>
+          Medicine
+        </button>
+        <button class="mode-pill" data-tool="lab">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 2h6M10 2v7l-5.5 9.5A2 2 0 0 0 6.2 22h11.6a2 2 0 0 0 1.7-3.5L14 9V2" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          Lab
+        </button>
+        <button class="mode-pill" data-tool="doctor">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M8 3v5a4 4 0 0 0 8 0V3M12 13v3a5 5 0 0 1-5 5H6M16 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          Doctor
+        </button>
+      </div>
+
+      <div class="input-row">
+        <textarea id="messageInput" rows="1" placeholder="Describe your symptoms..." aria-label="Message"></textarea>
+        <button class="send-btn" id="sendBtn" aria-label="Send message">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 12h16M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <p class="composer-hint" id="composerHint">Auto mode — I'll decide which tool(s) to use</p>
+    </footer>
+
+  </main>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
